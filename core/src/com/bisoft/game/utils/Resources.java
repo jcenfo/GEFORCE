@@ -38,6 +38,9 @@ public class Resources {
     public static String dialog = "";
     public static Boolean key = false;
 
+    //Musica Inicio
+    public static String MUSIC="assets/audio/music/Resurgence.mp3";
+
 
 
 }
