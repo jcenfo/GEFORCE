@@ -1,7 +1,12 @@
 package com.bisoft.game.screen;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
+import com.bisoft.game.elements.Text;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -10,6 +15,9 @@ public class LoadScreen implements Screen {
     private int contador;
     private Images companyLogo;
     private float sum, alpha;
+    private Text inicio;
+    private Inputs input;
+    private ShapeRenderer border;
 
     private boolean loaded, ready, pause;
 
@@ -21,12 +29,16 @@ public class LoadScreen implements Screen {
         this.ready = false;
         this.pause = false;
         this.contador = 0;
+        this.input = new Inputs();
+
+
     }
 
     @Override
     public void show() {
         this.companyLogo.setsize(300, 400);
         this.companyLogo.setCoordinates(200, 180);
+
     }
 
     @Override
@@ -106,6 +118,8 @@ public class LoadScreen implements Screen {
         }
 
     }
+
+
 
 
 

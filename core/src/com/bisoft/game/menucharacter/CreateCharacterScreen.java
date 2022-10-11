@@ -2,6 +2,7 @@ package com.bisoft.game.menucharacter;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
@@ -87,6 +88,8 @@ public class CreateCharacterScreen implements Screen {
     @Override
     public void dispose() {
     }
+
+
     private void generateMenu() {
         int mFontSize = 25;
 
@@ -110,7 +113,17 @@ public class CreateCharacterScreen implements Screen {
         }
 
 
-       // changeOptionColor(0);
+       changeOptionColor(0);
+    }
+
+    private void changeOptionColor(int pId) {
+        for (Text mTemp : this.options) {
+            mTemp.setColor(Color.WHITE);
+            if (pId >= 0) {
+                this.options.get(pId).setColor(Color.FIREBRICK);
+                //this.actual = pId;
+            }
+        }
     }
 
 

@@ -55,33 +55,10 @@ public class MenuScreen implements Screen {
         Render.Batch.end();
         /*validateMouse();*/
         validateKeys();
-      //showLoreScreen();
+        showLoreScreen();
     }
 
-    @Override
-    public void resize(int width, int height) {
 
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
-    public void dispose() {
-
-    }
 
     private void validateKeys() {
         try {
@@ -130,6 +107,32 @@ public class MenuScreen implements Screen {
 
         }
     }
+    @Override
+    public void resize(int width, int height) {
+
+    }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void hide() {
+
+    }
+
+    @Override
+    public void dispose() {
+
+    }
+
+
 
     private void generateMenu() {
         int mFontSize = 35;
@@ -157,6 +160,20 @@ public class MenuScreen implements Screen {
             }
         }
     }
+
+    private void showLoreScreen() {
+        if (!this.input.isEnter() && !this.input.isUp() && !this.input.isDown() && this.alpha >= 1) {
+            Resources.MAIN.setScreen(new LoreScreen());
+        } else {
+            if (this.input.isEnter() || this.input.isUp() || this.input.isDown()) {
+                this.alpha = 0f;
+            } else {
+                this.alpha += this.sum;
+            }
+        }
+    }
+
+
 
 
 
