@@ -26,12 +26,12 @@ public class LoreScreen implements Screen {
     private Music music;
 
     public LoreScreen() {
-        ///TEXTO DE LA PRIMERA PANTALLA
         music = LoadScreen.manager.get(Resources.MUSIC, Music.class);
         music.setLooping(true);
         music.setVolume(1.0f);
 
         music.play();
+        ///TEXTO DE LA PRIMERA PANTALLA
         this.text = new Text(Resources.GAME_FONT, 50, 400, 28,
                 "¡AQUI INICIA EL JUEGO!" + "\n" +
                         "…." + "\n" +
@@ -96,6 +96,7 @@ public class LoreScreen implements Screen {
     private void loadMenuScreen() {
         if (this.input.isUp() || this.input.isDown() || this.input.isEnter()) {
             Resources.MAIN.setScreen(new MenuScreen());
+            music.stop();
         }
     }
 
@@ -111,12 +112,7 @@ public class LoreScreen implements Screen {
         if (this.alpha >= 1) {
             this.text.setText("FIN............. INICIA EL JUEGO");
             this.text.setCoordinates(80, 400);
-            music.stop();
         }
 
     }
-
-
-
-
 }
