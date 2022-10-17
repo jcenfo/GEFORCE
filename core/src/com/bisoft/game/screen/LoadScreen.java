@@ -1,12 +1,9 @@
 package com.bisoft.game.screen;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.bisoft.game.Inputs.Inputs;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
 import com.bisoft.game.elements.Images;
-import com.bisoft.game.elements.Text;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -15,11 +12,10 @@ public class LoadScreen implements Screen {
     private int contador;
     private Images companyLogo;
     private float sum, alpha;
-    private Text inicio;
-    private Inputs input;
-    private ShapeRenderer border;
 
     private boolean loaded, ready, pause;
+
+    public static AssetManager manager;
 
     public LoadScreen() {
         this.companyLogo = new Images(Resources.COMPANY_LOGO);
@@ -29,20 +25,21 @@ public class LoadScreen implements Screen {
         this.ready = false;
         this.pause = false;
         this.contador = 0;
-        this.input = new Inputs();
-
-
+        manager = new AssetManager();
+        manager.load(Resources.MUSIC, Music.class);
+        manager.finishLoading();
     }
 
     @Override
     public void show() {
         this.companyLogo.setsize(300, 400);
         this.companyLogo.setCoordinates(200, 180);
-
     }
 
     @Override
     public void render(float delta) {
+
+
         Render.clearScreen();
         Render.Batch.begin();
         this.companyLogo.draw();
@@ -64,6 +61,7 @@ public class LoadScreen implements Screen {
             }
         } else
             fadeIn();
+
 
 
     }
@@ -118,8 +116,6 @@ public class LoadScreen implements Screen {
         }
 
     }
-
-
 
 
 
