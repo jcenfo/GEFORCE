@@ -1,6 +1,8 @@
 package com.bisoft.game.screen;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
@@ -13,6 +15,8 @@ public class LoadScreen implements Screen {
 
     private boolean loaded, ready, pause;
 
+    public static AssetManager manager;
+
     public LoadScreen() {
         this.companyLogo = new Images(Resources.COMPANY_LOGO);
         this.sum = 0.008F;
@@ -21,6 +25,9 @@ public class LoadScreen implements Screen {
         this.ready = false;
         this.pause = false;
         this.contador = 0;
+        manager = new AssetManager();
+        manager.load(Resources.MUSIC, Music.class);
+        manager.finishLoading();
     }
 
     @Override
@@ -31,6 +38,8 @@ public class LoadScreen implements Screen {
 
     @Override
     public void render(float delta) {
+
+
         Render.clearScreen();
         Render.Batch.begin();
         this.companyLogo.draw();
@@ -52,6 +61,7 @@ public class LoadScreen implements Screen {
             }
         } else
             fadeIn();
+
 
 
     }
