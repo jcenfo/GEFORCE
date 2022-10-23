@@ -2,6 +2,8 @@ package com.bisoft.game.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.bisoft.game.Inputs.Inputs;
@@ -19,12 +21,32 @@ public class LoreScreen implements Screen {
     private Inputs input;
     private Images background;
 
+    public static AssetManager manager;
+
+    private Music music;
+
     public LoreScreen() {
+        music = LoadScreen.manager.get(Resources.MUSIC, Music.class);
+        music.setLooping(true);
+        music.setVolume(1.0f);
+
+        music.play();
         ///TEXTO DE LA PRIMERA PANTALLA
         this.text = new Text(Resources.GAME_FONT, 50, 400, 28,
+<<<<<<< HEAD
                 "En un mundo de fantasia, donde las personas tienen \nvidas normales con trabajos normales, existe una \nmanera de ganarse la vida luchando " +
                         "\ncontra monstruos y completando desafios " +
                         "dentro \ndel gran calabozo, a esas personas se les conoce \ncomo aventureros");
+=======
+                "¡AQUI INICIA EL JUEGO!" + "\n" +
+                        "…." + "\n" +
+                        "COLOCAR LA HISTORIA" + "\n" +
+                        "................................. " + "\n" +
+                        ".................................... " + "\n" +
+                        "......................................" + "\n" +
+                        "......................................." + "\n");
+
+>>>>>>> 0ed810e6f11a0c4f89af9693b37b28ef6a10ebd6
         this.border = new ShapeRenderer();
         this.background = new Images(Resources.LORE_BACKGROUND);
         this.input = new Inputs();
@@ -36,15 +58,19 @@ public class LoreScreen implements Screen {
         this.background.setsize(600, 800);
         this.text.setColor(Color.WHITE);
         Gdx.input.setInputProcessor(this.input);
+
+
     }
 
     @Override
     public void render(float delta) {
+
         Render.Batch.begin();
         this.background.draw();
         this.text.draw();
         Render.Batch.end();
         loadMenuScreen();
+
         nextText();
 
     }
@@ -76,6 +102,7 @@ public class LoreScreen implements Screen {
     private void loadMenuScreen() {
         if (this.input.isUp() || this.input.isDown() || this.input.isEnter()) {
             Resources.MAIN.setScreen(new MenuScreen());
+            music.stop();
         }
     }
 
