@@ -33,26 +33,19 @@ public class LoreScreen implements Screen {
         music.play();
         ///TEXTO DE LA PRIMERA PANTALLA
         this.text = new Text(Resources.GAME_FONT, 50, 400, 28,
-<<<<<<< HEAD
+
                 "En un mundo de fantasia, donde las personas tienen \nvidas normales con trabajos normales, existe una \nmanera de ganarse la vida luchando " +
                         "\ncontra monstruos y completando desafios " +
                         "dentro \ndel gran calabozo, a esas personas se les conoce \ncomo aventureros");
-=======
-                "¡AQUI INICIA EL JUEGO!" + "\n" +
-                        "…." + "\n" +
-                        "COLOCAR LA HISTORIA" + "\n" +
-                        "................................. " + "\n" +
-                        ".................................... " + "\n" +
-                        "......................................" + "\n" +
-                        "......................................." + "\n");
 
->>>>>>> 0ed810e6f11a0c4f89af9693b37b28ef6a10ebd6
+
         this.border = new ShapeRenderer();
         this.background = new Images(Resources.LORE_BACKGROUND);
         this.input = new Inputs();
         this.sum = 0.0008F;
         this.alpha = 0;
     }
+
     @Override
     public void show() {
         this.background.setsize(600, 800);
@@ -74,6 +67,7 @@ public class LoreScreen implements Screen {
         nextText();
 
     }
+
     @Override
     public void resize(int width, int height) {
 
@@ -115,7 +109,7 @@ public class LoreScreen implements Screen {
             this.text.setCoordinates(80, 400);
         }
         if (this.alpha >= 1) {
-            this.text.setText("FIN............. INICIA EL JUEGO");
+            this.text.setText("PRESIONE ENTER");
             this.text.setCoordinates(80, 400);
         }
     }
