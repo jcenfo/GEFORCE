@@ -33,13 +33,10 @@ public class LoreScreen implements Screen {
         music.play();
         ///TEXTO DE LA PRIMERA PANTALLA
         this.text = new Text(Resources.GAME_FONT, 50, 400, 28,
-                "¡AQUI INICIA EL JUEGO!" + "\n" +
-                        "…." + "\n" +
-                        "COLOCAR LA HISTORIA" + "\n" +
-                        "................................. " + "\n" +
-                        ".................................... " + "\n" +
-                        "......................................" + "\n" +
-                        "......................................." + "\n");
+                "En un mundo de fantasia, donde las personas tienen \nvidas normales con trabajos normales, existe una \nmanera de ganarse la vida luchando " +
+                        "\ncontra monstruos y completando desafios " +
+                        "dentro \ndel gran calabozo, a esas personas se les conoce \ncomo aventureros");
+
 
         this.border = new ShapeRenderer();
         this.background = new Images(Resources.LORE_BACKGROUND);
@@ -47,6 +44,7 @@ public class LoreScreen implements Screen {
         this.sum = 0.0008F;
         this.alpha = 0;
     }
+
     @Override
     public void show() {
         this.background.setsize(600, 800);
@@ -68,6 +66,7 @@ public class LoreScreen implements Screen {
         nextText();
 
     }
+
     @Override
     public void resize(int width, int height) {
 
@@ -103,14 +102,13 @@ public class LoreScreen implements Screen {
     private void nextText() {
         this.alpha += this.sum;
         if (this.alpha >= 0.6) {
-            this.text.setText("SEGUNDA PARTE DE LA HISTORIA" + "\n" +
-                    "..................................... " + "\n" +
-                    ".....................................," + "\n" +
-                    "........................................");
+            this.text.setText("En este mundo de fantasia nace un heroe \nlegendario que tendra como objetivo ser el \nmejor aventurero del mundo, nuestro " +
+                    "heroe se \nadentrara en las fosas del gran calabozo para \nsubir" +
+                    " de nivel y conseguir equipamiento, \nhabilidades y accesorios dignos del mejor \naventurero del mundo");
             this.text.setCoordinates(80, 400);
         }
         if (this.alpha >= 1) {
-            this.text.setText("FIN............. INICIA EL JUEGO");
+            this.text.setText("PRESIONE ENTER");
             this.text.setCoordinates(80, 400);
         }
 
