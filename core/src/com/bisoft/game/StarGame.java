@@ -13,7 +13,8 @@ public class StarGame extends Game {
 	public void create() {
 		Render.Batch = new SpriteBatch();
 		//Resources.MAIN.setScreen(new LoreScreen());
-		Resources.MAIN.setScreen(new LoadScreen());
+
+		Resources.MAIN.setScreen(new Room1Screen());
 
 		//Resources.MAIN.setScreen(new MenuScreen());
 	}
