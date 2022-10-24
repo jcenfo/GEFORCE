@@ -8,6 +8,8 @@ import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -53,7 +55,6 @@ public class MenuScreen implements Screen {
             mTemp.draw();
         }
         Render.Batch.end();
-        /*validateMouse();*/
         validateKeys();
         showLoreScreen();
     }
@@ -93,12 +94,9 @@ public class MenuScreen implements Screen {
             case 0:
                Resources.MAIN.setScreen(new CreateCharacterScreen());
                 this.dispose();
-
-                //Tu gestor y objetos
-                //aqui
-                //Fin de tu gestor y objetos
-                //FabricaCharacter gestorCharacter = new FabricaCharacter();
-               // Character player = gestorCharacter.getCharacter();
+                //crear el personaje en pantalla
+                FabricaCharacter gestorCharacter = new FabricaCharacter();
+                Character player = gestorCharacter.getCharacter();
 
                 break;
             case 1:

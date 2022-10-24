@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -23,12 +24,11 @@ public class CreateCharacterScreen implements Screen {
 
     private ArrayList<Text> options;
     private Images image;
-
-    //private FabricaCharacter gestorCharacter;
+    private FabricaCharacter gestorCharacter;
 
     //private GestorPrototipo gestorPrototipo;
 
-    //private int actual = 0;
+    private int actual = 0;
 
     public CreateCharacterScreen() {
 
@@ -39,7 +39,7 @@ public class CreateCharacterScreen implements Screen {
         image = new Images(Resources.CREATE_CHARACTER_BACKGROUND);
         titulo = new Text(Resources.GAME_FONT, 160, 450, 40, "Seleccione un Personaje");
         options = new ArrayList<>();
-        //gestorCharacter = new FabricaCharacter();
+        gestorCharacter = new FabricaCharacter();
         //gestorPrototipo = new GestorPrototipo(0, 0, 0, 0);
     }
 
@@ -63,7 +63,7 @@ public class CreateCharacterScreen implements Screen {
         render.Batch.draw(mercenario, 350, 250);
         render.Batch.draw(mago, 550, 250);
         render.Batch.end();
-        //validateKeys();
+        validateKeys();
     }
 
     @Override
@@ -87,6 +87,31 @@ public class CreateCharacterScreen implements Screen {
 
     @Override
     public void dispose() {
+    }
+    private void validateKeys() {
+        try {
+            if (this.input.isRight()) {
+                this.actual++;
+                if (this.actual > 2) {
+                    this.actual = 0;
+                }
+                Thread.sleep(200);
+                changeOptionColor(actual);
+            }
+            if (this.input.isLeft()) {
+                this.actual--;
+                if (this.actual < 0) {
+                    this.actual = 2;
+                }
+                Thread.sleep(200);
+                changeOptionColor(actual);
+            }
+            if (this.input.isEnter()) {
+                executeAction();
+            }
+        } catch (InterruptedException e) {
+            Render.print(e.toString());
+        }
     }
 
 
@@ -121,9 +146,37 @@ public class CreateCharacterScreen implements Screen {
             mTemp.setColor(Color.WHITE);
             if (pId >= 0) {
                 this.options.get(pId).setColor(Color.FIREBRICK);
-                //this.actual = pId;
+                this.actual = pId;
             }
         }
+    }
+
+    private void executeAction() {
+        try {
+            switch (this.actual) {
+                case 0:
+                    gestorCharacter.processFunction(1);
+
+                    this.dispose();
+                    break;
+
+                case 1:
+                    gestorCharacter.processFunction(2);
+
+                    this.dispose();
+                    break;
+
+                case 2:
+                    gestorCharacter.processFunction(3);
+
+                    this.dispose();
+                    break;
+            }
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            Render.print(e.toString());
+        }
+
     }
 
 
