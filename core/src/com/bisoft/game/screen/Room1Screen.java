@@ -1,4 +1,4 @@
-package com.bisoft.game.screen;
+package src.com.bisoft.game.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
