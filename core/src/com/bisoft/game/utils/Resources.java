@@ -19,7 +19,7 @@ public class Resources {
     //imagen pantalla de menu
     public static final String MENU_BACKGROUND = "background/Fondo.png";
 
-    public static final String HABITACION_JARDIN = "rooms/FondoJardinEdit.jpg";
+        public static final String HABITACION_JARDIN = "rooms/FondoJardinEdit.jpg";
 
 
     public static final String MENU_Merchant = "background/MerchantBackground.jpg";

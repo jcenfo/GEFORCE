@@ -4,10 +4,14 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.bisoft.game.elements.Images;
+import com.bisoft.game.elements.Text;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
 public class LoadScreen implements Screen {
+
+    private Text gameName;
+
 
     private int contador;
     private Images companyLogo;
@@ -28,21 +32,22 @@ public class LoadScreen implements Screen {
         manager = new AssetManager();
         manager.load(Resources.MUSIC, Music.class);
         manager.finishLoading();
+        this.gameName = new Text(Resources.GAME_FONT, 230, 540, 80, "GE FORCE");
     }
 
     @Override
     public void show() {
         this.companyLogo.setsize(300, 400);
-        this.companyLogo.setCoordinates(200, 180);
+        this.companyLogo.setCoordinates(200, 100);
     }
 
     @Override
     public void render(float delta) {
 
-
         Render.clearScreen();
         Render.Batch.begin();
         this.companyLogo.draw();
+        this.gameName.draw();
         Render.Batch.end();
         if (this.loaded) {
             if (!this.pause) {
@@ -61,8 +66,6 @@ public class LoadScreen implements Screen {
             }
         } else
             fadeIn();
-
-
 
     }
 

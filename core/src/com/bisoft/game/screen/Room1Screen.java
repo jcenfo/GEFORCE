@@ -30,7 +30,6 @@ public class Room1Screen implements Screen {
         this.input = new Inputs();
         this.border = new ShapeRenderer();
         this.gameName = new Text(Resources.GAME_FONT, 200, 510, 80, "GE FORCE");
-        resize(1000,1000);
     }
 
     @Override
