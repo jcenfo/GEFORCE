@@ -1,5 +1,4 @@
 package com.bisoft.game.screen;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -17,6 +16,7 @@ import java.util.ArrayList;
 public class Room1Screen implements Screen {
 
     private Images back;
+
     private Inputs input;
 
     private Text gameName;
