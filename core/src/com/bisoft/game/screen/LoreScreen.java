@@ -33,6 +33,7 @@ public class LoreScreen implements Screen {
         music.play();
         ///TEXTO DE LA PRIMERA PANTALLA
         this.text = new Text(Resources.GAME_FONT, 50, 400, 28,
+
                 "En un mundo de fantasia, donde las personas tienen \nvidas normales con trabajos normales, existe una \nmanera de ganarse la vida luchando " +
                         "\ncontra monstruos y completando desafios " +
                         "dentro \ndel gran calabozo, a esas personas se les conoce \ncomo aventureros");
@@ -111,6 +112,5 @@ public class LoreScreen implements Screen {
             this.text.setText("PRESIONE ENTER");
             this.text.setCoordinates(80, 400);
         }
-
     }
 }

@@ -21,6 +21,7 @@ public class Resources {
 
     public static final String HABITACION_JARDIN = "rooms/FondoDesierto.jpg";
 
+    public static final String ARCADE_ROOM = "rooms/ArcadeRoom.jpg";
 
     public static final String MENU_Merchant = "background/MerchantBackground.jpg";
     //imagen pantalla de carga
