@@ -36,12 +36,15 @@ public class LoreScreen implements Screen {
                 "En un mundo de fantasia, donde las personas tienen \nvidas normales con trabajos normales, existe una \nmanera de ganarse la vida luchando " +
                         "\ncontra monstruos y completando desafios " +
                         "dentro \ndel gran calabozo, a esas personas se les conoce \ncomo aventureros");
+
+
         this.border = new ShapeRenderer();
         this.background = new Images(Resources.LORE_BACKGROUND);
         this.input = new Inputs();
         this.sum = 0.0008F;
         this.alpha = 0;
     }
+
     @Override
     public void show() {
         this.background.setsize(600, 800);
@@ -59,6 +62,7 @@ public class LoreScreen implements Screen {
         nextText();
 
     }
+
     @Override
     public void resize(int width, int height) {
 
@@ -100,7 +104,7 @@ public class LoreScreen implements Screen {
             this.text.setCoordinates(80, 400);
         }
         if (this.alpha >= 1) {
-            this.text.setText("FIN............. INICIA EL JUEGO");
+            this.text.setText("PRESIONE ENTER");
             this.text.setCoordinates(80, 400);
         }
     }

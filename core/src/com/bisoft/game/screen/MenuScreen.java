@@ -8,6 +8,8 @@ import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -53,35 +55,11 @@ public class MenuScreen implements Screen {
             mTemp.draw();
         }
         Render.Batch.end();
-        /*validateMouse();*/
         validateKeys();
-      //showLoreScreen();
+        showLoreScreen();
     }
 
-    @Override
-    public void resize(int width, int height) {
 
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
-    public void dispose() {
-
-    }
 
     private void validateKeys() {
         try {
@@ -116,12 +94,9 @@ public class MenuScreen implements Screen {
             case 0:
                Resources.MAIN.setScreen(new CreateCharacterScreen());
                 this.dispose();
-
-                //Tu gestor y objetos
-                //aqui
-                //Fin de tu gestor y objetos
-                //FabricaCharacter gestorCharacter = new FabricaCharacter();
-               // Character player = gestorCharacter.getCharacter();
+                //crear el personaje en pantalla
+                FabricaCharacter gestorCharacter = new FabricaCharacter();
+                Character player = gestorCharacter.getCharacter();
 
                 break;
             case 1:
@@ -130,6 +105,32 @@ public class MenuScreen implements Screen {
 
         }
     }
+    @Override
+    public void resize(int width, int height) {
+
+    }
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void hide() {
+
+    }
+
+    @Override
+    public void dispose() {
+
+    }
+
+
 
     private void generateMenu() {
         int mFontSize = 35;
@@ -157,6 +158,20 @@ public class MenuScreen implements Screen {
             }
         }
     }
+
+    private void showLoreScreen() {
+        if (!this.input.isEnter() && !this.input.isUp() && !this.input.isDown() && this.alpha >= 1) {
+            Resources.MAIN.setScreen(new LoreScreen());
+        } else {
+            if (this.input.isEnter() || this.input.isUp() || this.input.isDown()) {
+                this.alpha = 0f;
+            } else {
+                this.alpha += this.sum;
+            }
+        }
+    }
+
+
 
 
 
