@@ -8,6 +8,7 @@ import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
+import com.bisoft.game.screen.Room1Screen;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -156,18 +157,28 @@ public class CreateCharacterScreen implements Screen {
             switch (this.actual) {
                 case 0:
                     gestorCharacter.processFunction(1);
+                    gestorCharacter.getCharacter().info_Character();
+                    System.out.println(gestorCharacter.getCharacter().info_Character());
+                    Resources.MAIN.setScreen(new Room1Screen());
+
 
                     this.dispose();
                     break;
 
                 case 1:
                     gestorCharacter.processFunction(2);
+                    gestorCharacter.getCharacter().info_Character();
+                    System.out.println(gestorCharacter.getCharacter().info_Character());
+                    Resources.MAIN.setScreen(new Room1Screen());
 
                     this.dispose();
                     break;
 
                 case 2:
                     gestorCharacter.processFunction(3);
+                    gestorCharacter.getCharacter().info_Character();
+                    System.out.println(gestorCharacter.getCharacter().info_Character());
+                    Resources.MAIN.setScreen(new Room1Screen());
 
                     this.dispose();
                     break;
