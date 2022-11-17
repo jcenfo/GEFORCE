@@ -27,6 +27,7 @@ public class MenuJuegoScreen implements Screen {
     private Texture guerrero, mago, mercenario, fondoJardin, fondoJardinEdit;
 
     private Text titulo;
+    private static Text countDownLabel;
 
     private ArrayList<Text> options;
     private Images image;
@@ -37,6 +38,8 @@ public class MenuJuegoScreen implements Screen {
     //private GestorPrototipo gestorPrototipo;
 
     private int actual = 0;
+    private static float timeCount;
+    private static float worldTimer;
 
     public MenuJuegoScreen() {
 
@@ -48,6 +51,7 @@ public class MenuJuegoScreen implements Screen {
         fondoJardinEdit = new Texture("assets/rooms/FondoJardinEditSmall.jpg");
         image = new Images(Resources.CREATE_CHARACTER_BACKGROUND);
         titulo = new Text(Resources.GAME_FONT, 160, 450, 40, "Seleccione Tipo de Juego");
+        countDownLabel = new Text(Resources.GAME_FONT, 160, 450, 40, "Seleccione Tipo de Juego");
         options = new ArrayList<>();
         gestorCharacter = new FabricaCharacter();
         //gestorPrototipo = new GestorPrototipo(0, 0, 0, 0);
@@ -104,7 +108,7 @@ public class MenuJuegoScreen implements Screen {
         try {
             if (this.input.isRight()) {
                 this.actual++;
-                if (this.actual > 2) {
+                if (this.actual > 3) {
                     this.actual = 0;
                 }
                 Thread.sleep(200);
@@ -113,7 +117,7 @@ public class MenuJuegoScreen implements Screen {
             if (this.input.isLeft()) {
                 this.actual--;
                 if (this.actual < 0) {
-                    this.actual = 2;
+                    this.actual = 3;
                 }
                 Thread.sleep(200);
                 changeOptionColor(actual);
@@ -136,18 +140,22 @@ public class MenuJuegoScreen implements Screen {
         this.options.add(new Text("Jugar", mFontSize, Resources.GAME_FONT));
         this.options.add(new Text("Elegir Calobozos", mFontSize, Resources.GAME_FONT));
         this.options.add(new Text("        Salir", mFontSize, Resources.GAME_FONT));
+        this.options.add(new Text("        Atras", mFontSize, Resources.GAME_FONT));
 
 
         for (int i = 0; i < options.size(); i++) {
 
             if (i == 0) {
-                this.options.get(i).setX(140);
+                this.options.get(i).setX(100);
             }
             if (i == 1) {
-                this.options.get(1).setX(330);
+                this.options.get(i).setX(230);
             }
             if (i == 2) {
-                this.options.get(2).setX(560);
+                this.options.get(i).setX(450);
+            }
+            if (i == 3) {
+                this.options.get(i).setX(600);
             }
             this.options.get(i).setY(200);
 
@@ -187,6 +195,12 @@ public class MenuJuegoScreen implements Screen {
 
                     this.dispose();
                     break;
+
+                case 3:
+                    gestorCalabozos.processFunction(4);
+
+                    this.dispose();
+                    break;
                 default:
                     String sMessage = "";
                     sMessage = "Invalid option";
@@ -196,6 +210,15 @@ public class MenuJuegoScreen implements Screen {
             Render.print(e.toString());
         }
 
+    }
+
+    public static void update(float dt){
+        timeCount += dt;
+        if (timeCount >= 1 ) {
+            worldTimer--;
+            countDownLabel.setText(String.format("%03d", worldTimer));
+            timeCount = 0;
+        }
     }
 
 

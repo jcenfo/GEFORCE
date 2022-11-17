@@ -1,14 +1,13 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor;
 
+import com.bisoft.game.menucharacter.CreateCharacterScreen;
 import com.bisoft.game.menucharacter.JuegoCalabozo;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaAbstractaCharacter.GameCharacter;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaGuerrero;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMago;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMercenario;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
-import com.bisoft.game.screen.LoreScreen;
-import com.bisoft.game.screen.MenuDiferentesCalabozosScreen;
-import com.bisoft.game.screen.MenuJuegoScreen;
+import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -59,7 +58,7 @@ public class FabricaCalabozos {
             case 1:
 
                 System.out.println("Estoy jugando default");
-                Resources.MAIN.setScreen(new JuegoCalabozo());
+                Resources.MAIN.setScreen(new PlayerScreen());
                 break;
             case 2:
                 System.out.println("Estoy por elegir calabozo");
@@ -72,7 +71,9 @@ public class FabricaCalabozos {
                 Render.close();
                 break;
             case 4:
-                sMessage = get_information_Character();
+                Resources.MAIN.setScreen(new CreateCharacterScreen());
+//                Resources.MAIN.setScreen(new TimerScreen());
+//                sMessage = get_information_Character();
                 break;
             case 5:
                 sMessage = "Thank you for using the software";

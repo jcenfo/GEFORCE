@@ -68,11 +68,15 @@ public class FabricaCharacter {
                 //Crea un mercenario
                GameCharacter tiChara1 = new FabricaMercenario();
                sMessage = CreateFabricaCharacter(tiChara1);
+               System.out.println("Estoy en mercenario");
+               Resources.MAIN.setScreen(new MenuJuegoScreen());
                 break;
             case 3:
                 //Crea un Mago
                 GameCharacter tiChara2 = new FabricaMago();
                 sMessage = CreateFabricaCharacter(tiChara2);
+                System.out.println("Estoy en Mago");
+                Resources.MAIN.setScreen(new MenuJuegoScreen());
                 break;
             case 4:
                 sMessage = get_information_Character();
