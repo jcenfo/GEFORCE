@@ -9,6 +9,7 @@ import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
 import com.bisoft.game.screen.Room1Screen;
+import com.bisoft.game.screen.RoomMountain;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -159,7 +160,7 @@ public class CreateCharacterScreen implements Screen {
                     gestorCharacter.processFunction(1);
                     gestorCharacter.getCharacter().info_Character();
                     System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new Room1Screen());
+                    Resources.MAIN.setScreen(new RoomMountain());
 
 
                     this.dispose();
@@ -169,7 +170,7 @@ public class CreateCharacterScreen implements Screen {
                     gestorCharacter.processFunction(2);
                     gestorCharacter.getCharacter().info_Character();
                     System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new Room1Screen());
+                    Resources.MAIN.setScreen(new RoomMountain());
 
                     this.dispose();
                     break;
@@ -178,7 +179,7 @@ public class CreateCharacterScreen implements Screen {
                     gestorCharacter.processFunction(3);
                     gestorCharacter.getCharacter().info_Character();
                     System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new Room1Screen());
+                    Resources.MAIN.setScreen(new RoomMountain());
 
                     this.dispose();
                     break;
