@@ -50,19 +50,15 @@ public class LoreScreen implements Screen {
         this.background.setsize(600, 800);
         this.text.setColor(Color.WHITE);
         Gdx.input.setInputProcessor(this.input);
-
-
     }
 
     @Override
     public void render(float delta) {
-
         Render.Batch.begin();
         this.background.draw();
         this.text.draw();
         Render.Batch.end();
         loadMenuScreen();
-
         nextText();
 
     }
@@ -111,6 +107,5 @@ public class LoreScreen implements Screen {
             this.text.setText("PRESIONE ENTER");
             this.text.setCoordinates(80, 400);
         }
-
     }
 }

@@ -68,8 +68,8 @@ public class MenuScreen implements Screen {
                 this.actual++;
                 if (this.actual > 1)
                     this.actual = 0;
-               changeOptionColor(this.actual);
-               // mover las opciones
+                changeOptionColor(this.actual);
+                // mover las opciones
                 Thread.sleep(mTime);
             }
             if (this.input.isUp()) {
@@ -92,7 +92,7 @@ public class MenuScreen implements Screen {
     private void executeAction() {
         switch (this.actual) {
             case 0:
-               Resources.MAIN.setScreen(new CreateCharacterScreen());
+                Resources.MAIN.setScreen(new CreateCharacterScreen());
                 this.dispose();
                 //crear el personaje en pantalla
                 FabricaCharacter gestorCharacter = new FabricaCharacter();
