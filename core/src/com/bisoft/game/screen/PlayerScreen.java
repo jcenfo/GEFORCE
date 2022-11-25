@@ -13,6 +13,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.bisoft.game.Inputs.Inputs;
+import com.bisoft.game.Inputs.MyTextInputListener;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
@@ -84,6 +85,14 @@ public class PlayerScreen extends InputAdapter implements Screen {
         batch = new SpriteBatch();
         //
 
+        //Text field below
+        MyTextInputListener listener = new MyTextInputListener();
+        Gdx.input.getTextInput(listener, "Dialog Title", "Initial Textfield Value", "Hint Value");
+
+        MyTextInputListener inputListener = new MyTextInputListener();
+        inputListener.input("textField");
+
+
     }
 
     @Override
@@ -92,6 +101,8 @@ public class PlayerScreen extends InputAdapter implements Screen {
         // player
         Gdx.gl.glClearColor(1,1,1,0);
         ScreenUtils.clear(1,1,1,0);
+        MyTextInputListener listener = new MyTextInputListener();
+        Gdx.input.getTextInput(listener, "Dialog Title", "Initial Textfield Value", "Hint Value");
 
         batch.begin();
             camera.position.set(playerx,playery,0);
@@ -138,7 +149,13 @@ public class PlayerScreen extends InputAdapter implements Screen {
             player_rectangle = new Rectangle(playerx, playery, player.getWidth(), player.getHeight());
             brick_rectangle = new Rectangle(100, 100, brick.getWidth(), brick.getHeight());
 
-            batch.setProjectionMatrix(camera.combined);
+        //Text field below
+        MyTextInputListener listener1 = new MyTextInputListener();
+        Gdx.input.getTextInput(listener1, "Dialog Title", "Initial Textfield Value", "Hint Value");
+
+
+
+        batch.setProjectionMatrix(camera.combined);
         batch.end();
     }
 
