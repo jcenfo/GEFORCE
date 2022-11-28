@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="152">
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Grass.tsx"/>
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Piedras2.tsx"/>
+ <imagelayer id="15" name="RoomMazmorraTerror">
+  <image source="../../../../Downloads/FondoMazmorraEdit.jpg" width="813" height="610"/>
+ </imagelayer>
+ <objectgroup color="#aa0000" id="16" name="Colisiones">
+  <object id="146" x="-8.1399" y="-5.08744" width="229.952" height="305.246"/>
+  <object id="147" x="-7.12242" y="386.645" width="226.9" height="230.97"/>
+  <object id="148" x="220.795" y="-6.10493" width="595.231" height="151.606"/>
+  <object id="149" x="598.283" y="147.536" width="218.76" height="76.3116"/>
+  <object id="150" x="594.213" y="313.386" width="229.952" height="302.194"/>
+  <object id="151" x="216.725" y="531.129" width="383.593" height="87.504"/>
+ </objectgroup>
+</map>

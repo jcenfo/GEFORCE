@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="152">
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Grass.tsx"/>
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Piedras2.tsx"/>
+ <imagelayer id="15" name="RoomJungla">
+  <image source="../../../../Downloads/FondoJardinEdit.jpg" width="813" height="610"/>
+ </imagelayer>
+ <objectgroup color="#aa0000" id="16" name="Colisiones">
+  <object id="146" x="-1.01749" y="-1.01749" width="218.76" height="226.9"/>
+  <object id="147" x="217.742" y="-1.01749" width="593.196" height="149.571"/>
+  <object id="148" x="592.178" y="146.518" width="219.777" height="153.641"/>
+  <object id="149" x="-1.01749" y="311.351" width="225.882" height="299.141"/>
+  <object id="150" x="224.865" y="531.129" width="590.143" height="77.3291"/>
+  <object id="151" x="592.178" y="382.576" width="220.795" height="149.571"/>
+ </objectgroup>
+</map>

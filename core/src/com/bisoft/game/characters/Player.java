@@ -16,7 +16,7 @@ public class Player extends Sprite {
     private int SPEED = 2;
     //private Texture texture;
     private World world;
-    private Body b2Body;
+    public Body b2Body;
 
 
     private enum State {STANDINGup, STANDINGdown, STANDINGleft, STANDINGright, RUNNINGup, RUNNINGdown, RUNNINGleft, RUNNINGright}

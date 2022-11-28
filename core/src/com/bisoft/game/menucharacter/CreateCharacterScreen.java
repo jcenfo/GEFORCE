@@ -8,7 +8,6 @@ import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
-import com.bisoft.game.screen.Room1Screen;
 import com.bisoft.game.screen.RoomMountain;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
