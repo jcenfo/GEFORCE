@@ -36,7 +36,7 @@ public class RoomMountain implements Screen {
 
     public RoomMountain() {
         input = new Inputs();
-        screen = new Pantalla("rooms/city/RoomDelTiempo.tmx");
+        screen = new Pantalla("rooms/city/RoomAlcantarilla.tmx");
         ///this.statusText = new StatusText(true);
         Resources.CURRENT_LOCATION = "City";
         int[] layers = {1, 3};

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="153">
- <tileset firstgid="1" source="city/tsx1/FondoAlcantarilla.tsx"/>
+ <tileset firstgid="1" source="tsx1/FondoAlcantarilla.tsx"/>
 
  <imagelayer id="15" name="RoomAlcantarilla">
-   <image source="city/png/FondoAlcantarilla.jpg" width="813" height="610"/>
+   <image source="png/FondoAlcantarilla.jpg" width="813" height="610"/>
  </imagelayer>
  <objectgroup color="#aa0000" id="16" name="Colisiones">
   <object id="146" x="-5.08744" y="-3.05246" width="225.882" height="241.145"/>
