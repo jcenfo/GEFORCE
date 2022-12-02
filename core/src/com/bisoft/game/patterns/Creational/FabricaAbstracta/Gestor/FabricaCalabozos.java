@@ -17,6 +17,7 @@ public class FabricaCalabozos {
 
     private static Character arCharacter;
     private static LoreScreen loreScreen = new LoreScreen();
+    private static FabricaCharacter gestorCharacter;
 
     // constructor
     public FabricaCalabozos() {
@@ -58,7 +59,11 @@ public class FabricaCalabozos {
             case 1:
 
                 System.out.println("Estoy jugando default");
-                Resources.MAIN.setScreen(new PlayerScreen());
+//                Resources.MAIN.setScreen(new PlayerScreen());
+                gestorCharacter = new FabricaCharacter();
+                gestorCharacter.getCharacter().info_Character();
+                System.out.println(gestorCharacter.getCharacter().info_Character());
+                Resources.MAIN.setScreen(new RoomMountain());
                 break;
             case 2:
                 System.out.println("Estoy por elegir calabozo");

@@ -14,9 +14,9 @@ public class StarGame extends Game {
 		Render.Batch = new SpriteBatch();
 		//Resources.MAIN.setScreen(new LoreScreen());
 
-		//Resources.MAIN.setScreen(new LoadScreen());
+		Resources.MAIN.setScreen(new LoadScreen());
 
-		Resources.MAIN.setScreen(new MenuScreen());
+//		Resources.MAIN.setScreen(new MenuScreen());
 	}
 
 }

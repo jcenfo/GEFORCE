@@ -158,9 +158,9 @@ public class CreateCharacterScreen implements Screen {
             switch (this.actual) {
                 case 0:
                     gestorCharacter.processFunction(1);
-                    gestorCharacter.getCharacter().info_Character();
-                    System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new RoomMountain());
+//                    gestorCharacter.getCharacter().info_Character();
+//                    System.out.println(gestorCharacter.getCharacter().info_Character());
+//                    Resources.MAIN.setScreen(new RoomMountain());
 
 
                     this.dispose();
@@ -168,18 +168,18 @@ public class CreateCharacterScreen implements Screen {
 
                 case 1:
                     gestorCharacter.processFunction(2);
-                    gestorCharacter.getCharacter().info_Character();
-                    System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new RoomMountain());
+//                    gestorCharacter.getCharacter().info_Character();
+//                    System.out.println(gestorCharacter.getCharacter().info_Character());
+//                    Resources.MAIN.setScreen(new RoomMountain());
 
                     this.dispose();
                     break;
 
                 case 2:
                     gestorCharacter.processFunction(3);
-                    gestorCharacter.getCharacter().info_Character();
-                    System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new RoomMountain());
+//                    gestorCharacter.getCharacter().info_Character();
+//                    System.out.println(gestorCharacter.getCharacter().info_Character());
+//                    Resources.MAIN.setScreen(new RoomMountain());
 
                     this.dispose();
                     break;

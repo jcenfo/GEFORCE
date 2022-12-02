@@ -1,16 +1,24 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor;
 
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaAbstractaCharacter.GameCharacter;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaGuerrero;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMago;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMercenario;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
+import com.bisoft.game.screen.LoadScreen;
+import com.bisoft.game.screen.LoreScreen;
+import com.bisoft.game.screen.MenuJuegoScreen;
+import com.bisoft.game.screen.MenuScreen;
+import com.bisoft.game.utils.Resources;
 
 public class FabricaCharacter {
 
     //arreglo de personajes
 
     private static Character arCharacter;
+    private static LoreScreen loreScreen = new LoreScreen();
 
     // constructor
     public FabricaCharacter() {
@@ -53,16 +61,22 @@ public class FabricaCharacter {
                 //Crea un guerrero
                 GameCharacter tiChara = new FabricaGuerrero();
                 sMessage = CreateFabricaCharacter(tiChara);
+                System.out.println("Estoy en guerrero");
+                Resources.MAIN.setScreen(new MenuJuegoScreen());
                 break;
             case 2:
                 //Crea un mercenario
                GameCharacter tiChara1 = new FabricaMercenario();
                sMessage = CreateFabricaCharacter(tiChara1);
+               System.out.println("Estoy en mercenario");
+               Resources.MAIN.setScreen(new MenuJuegoScreen());
                 break;
             case 3:
                 //Crea un Mago
                 GameCharacter tiChara2 = new FabricaMago();
                 sMessage = CreateFabricaCharacter(tiChara2);
+                System.out.println("Estoy en Mago");
+                Resources.MAIN.setScreen(new MenuJuegoScreen());
                 break;
             case 4:
                 sMessage = get_information_Character();
