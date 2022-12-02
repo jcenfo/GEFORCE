@@ -9,6 +9,7 @@ import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCalabozos;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaTipoJuego;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -19,7 +20,7 @@ public class MenuDiferentesCalabozosScreen implements Screen {
     private Inputs input;
     //private Pantalla screen;
 
-    private Texture guerrero, mago, mercenario, fondoJardin, fondoJardinEdit;
+    private Texture guerrero, mago, mercenario, fondoJardin, fondoJardinEdit, tenebroso, trampas;
 
     private Text titulo;
 
@@ -27,7 +28,7 @@ public class MenuDiferentesCalabozosScreen implements Screen {
     private Images image;
     private FabricaCharacter gestorCharacter;
 
-    private FabricaCalabozos gestorCalabozos;
+    private FabricaTipoJuego gestorTipoJuego;
 
     //private GestorPrototipo gestorPrototipo;
 
@@ -41,6 +42,8 @@ public class MenuDiferentesCalabozosScreen implements Screen {
         mago = new Texture("assets/makecharacter/Mago/Mago.png");
         fondoJardin = new Texture("assets/rooms/FondoJardinSmall.jpeg");
         fondoJardinEdit = new Texture("assets/rooms/FondoJardinEditSmall.jpg");
+        tenebroso = new Texture("assets/rooms/city/caminoSmall.jpeg");
+        trampas = new Texture("assets/rooms/city/Piedras2Small.jpeg");
         image = new Images(Resources.CREATE_CHARACTER_BACKGROUND);
         titulo = new Text(Resources.GAME_FONT, 160, 450, 40, "Seleccione Calabozo");
         options = new ArrayList<>();
@@ -67,8 +70,10 @@ public class MenuDiferentesCalabozosScreen implements Screen {
 //        render.Batch.draw(guerrero, 150, 250);
 //        render.Batch.draw(mercenario, 350, 250);
 //        render.Batch.draw(mago, 550, 250);
-        render.Batch.draw(fondoJardin, 150, 250);
-        render.Batch.draw(fondoJardinEdit, 350, 250);
+//        render.Batch.draw(fondoJardin, 150, 250);
+//        render.Batch.draw(fondoJardinEdit, 350, 250);
+        render.Batch.draw(tenebroso, 200, 250);
+        render.Batch.draw(trampas, 400, 250);
         render.Batch.end();
         validateKeys();
     }
@@ -128,21 +133,21 @@ public class MenuDiferentesCalabozosScreen implements Screen {
 //        this.options.add(new Text("Guerrero", mFontSize, Resources.GAME_FONT));
 //        this.options.add(new Text("Mercenario", mFontSize, Resources.GAME_FONT));
 //        this.options.add(new Text("Mago", mFontSize, Resources.GAME_FONT));
-//        this.options.add(new Text("Jugar", mFontSize, Resources.GAME_FONT));
-//        this.options.add(new Text("Elegir Calobozos", mFontSize, Resources.GAME_FONT));
+        this.options.add(new Text("CALABOZO TENEBROSO", mFontSize, Resources.GAME_FONT));
+        this.options.add(new Text("CALOBOZO CON TRAMPAS", mFontSize, Resources.GAME_FONT));
         this.options.add(new Text("Salir", mFontSize, Resources.GAME_FONT));
 
 
         for (int i = 0; i < options.size(); i++) {
 
             if (i == 0) {
-                this.options.get(i).setX(140);
+                this.options.get(i).setX(10);
             }
             if (i == 1) {
-                this.options.get(1).setX(330);
+                this.options.get(1).setX(300);
             }
             if (i == 2) {
-                this.options.get(2).setX(560);
+                this.options.get(2).setX(650);
             }
             this.options.get(i).setY(200);
 
@@ -166,19 +171,19 @@ public class MenuDiferentesCalabozosScreen implements Screen {
         try {
             switch (this.actual) {
                 case 0:
-                    gestorCalabozos.processFunction(1);
+                    gestorTipoJuego.processFunction(1);
 
                     this.dispose();
                     break;
 
                 case 1:
-                    gestorCalabozos.processFunction(2);
+                    gestorTipoJuego.processFunction(2);
 
                     this.dispose();
                     break;
 
                 case 2:
-                    gestorCalabozos.processFunction(3);
+                    gestorTipoJuego.processFunction(3);
 
                     this.dispose();
                     break;

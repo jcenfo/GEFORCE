@@ -30,7 +30,7 @@ public class RoomAlcantarilla implements Screen {
 
     public RoomAlcantarilla() {
         input = new Inputs();
-        screen = new Pantalla("rooms/RoomAlcantarilla.tmx");
+        screen = new Pantalla("rooms/city/RoomAlcantarilla.tmx");
         ///this.statusText = new StatusText(true);
         Resources.CURRENT_LOCATION = "City";
         int[] layers = {1, 3};
