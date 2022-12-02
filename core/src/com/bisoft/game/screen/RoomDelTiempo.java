@@ -11,6 +11,10 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.characters.Player;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
+import com.bisoft.game.patterns.Structural.Adapter.objetos.MyRectangle;
+import com.bisoft.game.patterns.Structural.Adapter.adaptador.MyRectangleAdapter;
+import com.bisoft.game.patterns.Structural.Decorator.componente.Colision;
+import com.bisoft.game.patterns.Structural.Decorator.gestor.GestorDecorador;
 import com.bisoft.game.utils.Pantalla;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
@@ -18,7 +22,7 @@ import com.bisoft.game.utils.WorldContactListener;
 
 import java.util.Objects;
 
-public class RoomMountain implements Screen {
+public class RoomDelTiempo implements Screen {
     private Texture rectangle;
     private Render render = new Render();
     private Inputs input;
@@ -31,17 +35,18 @@ public class RoomMountain implements Screen {
     //private StatusText statusText;
     private FabricaCharacter gestor = new FabricaCharacter();
     private int actual = 0;
+    GestorDecorador gestorDecorador = new GestorDecorador();
 
     ShapeRenderer border;
 
-    public RoomMountain() {
+    public RoomDelTiempo() {
         input = new Inputs();
         screen = new Pantalla("rooms/city/RoomDelTiempo.tmx");
         ///this.statusText = new StatusText(true);
         Resources.CURRENT_LOCATION = "City";
         int[] layers = {1, 3};
         atlas = new TextureAtlas("makecharacter/Pack/playerAssets.pack");
-        player = new Player(atlas, 417, 285, this.screen.getWorld());
+        player = new Player(atlas, 417, 350, this.screen.getWorld());
         screen.getWorld().setContactListener(new WorldContactListener());
     }
     @Override
@@ -56,7 +61,6 @@ public class RoomMountain implements Screen {
         render.clearScreen();
 
        screen.update(delta);
-       player.b2Body.getPosition().set(0,0);
        player.update(delta);
 
         render.Batch.setProjectionMatrix(screen.getCAMERA().combined);
@@ -113,41 +117,57 @@ public class RoomMountain implements Screen {
         }
 
         if (input.isUp() || input.isDown() || input.isRight() || input.isLeft() || input.isEnter()) {
-            boolean colisionDetect = false;
+            boolean colisionArriba = false;
+            boolean colisionAbajo = false;
+            boolean colisionDerecha = false;
+            boolean colisionIzquierda = false;
+
+            MyRectangle playerMyRectangle =  new MyRectangleAdapter(player.getBoundingRectangle(), "player");
+
+            boolean colisionConSalidaIzquierda = false;
+            boolean colisionConSalidaDerecha = false;
             for (RectangleMapObject rectangle : colisiones.getByType(RectangleMapObject.class)) {
-                colisionDetect = rectangle.getRectangle().overlaps(player.getBoundingRectangle());
-                if (colisionDetect) {
+                MyRectangle paredMyRectangle = new MyRectangleAdapter(rectangle.getRectangle(), rectangle.getName());
+                Colision ladoColision = gestorDecorador.getColision(playerMyRectangle, paredMyRectangle);
+                if (ladoColision.colision()) {
+                    System.out.println("Revisando colisiones de " + playerMyRectangle.getName() + " con " + paredMyRectangle.getName() + " = " + ladoColision);
+                    if (paredMyRectangle.getName().equalsIgnoreCase("entradaSiguiente")){
+                        Resources.MAIN.setScreen(new RoomMazmorra());
 
-
-                    player.setOrigin(0,0);
-                    player.setOriginBasedPosition(0,0);
-                    player.setPosition(0,0);
-
-
-
-
-                    break;
+                    } else if(rectangle.getName().equalsIgnoreCase("entradaAnterior")){
+                        System.out.println(paredMyRectangle.getName());
+                    }
                 }
+                colisionArriba = colisionArriba || ladoColision.colisionArriba();
+                colisionAbajo = colisionAbajo || ladoColision.colisionAbajo();
+                colisionDerecha = colisionDerecha || ladoColision.colisionDerecha();
+                colisionIzquierda = colisionIzquierda || ladoColision.colisionIzquierda();
+
+
+
+
             }
-            if (colisionDetect == false) {
-                if (input.isDown()) {
-                    player.move("down");
-                }
-                if (input.isLeft()) {
-                    player.move("left");
-                }
-                if (input.isRight()) {
-                    player.move("right");
-                }
-                if (input.isUp()) {
-                    player.move("up");
-                }
-                if (input.isEnter()) {
-                    Resources.dialog = "";
-                }
-            } else {
-                player.move("none");
 
+            if (input.isDown() && !colisionAbajo) {
+                player.move("down");
+            } else {
+                if (input.isLeft() && !colisionIzquierda) {
+                    player.move("left");
+                } else {
+                    if (input.isRight() && !colisionDerecha) {
+                        player.move("right");
+                    } else {
+                        if (input.isUp() && !colisionArriba) {
+                            player.move("up");
+                        } else {
+                            if (input.isEnter()) {
+                                Resources.dialog = "";
+                            } else{
+                                player.move("none");
+                            }
+                        }
+                    }
+                }
             }
         }else {
             player.move("none");

@@ -8,7 +8,7 @@ import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.elements.Images;
 import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
-import com.bisoft.game.screen.RoomMountain;
+import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
@@ -159,7 +159,8 @@ public class CreateCharacterScreen implements Screen {
                     gestorCharacter.processFunction(1);
                     gestorCharacter.getCharacter().info_Character();
                     System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new RoomMountain());
+                    Resources.MAIN.setScreen(new RoomDelTiempo());
+                    System.out.println("Case 0");
 
 
                     this.dispose();
@@ -169,7 +170,8 @@ public class CreateCharacterScreen implements Screen {
                     gestorCharacter.processFunction(2);
                     gestorCharacter.getCharacter().info_Character();
                     System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new RoomMountain());
+                    Resources.MAIN.setScreen(new RoomAlcantarilla());
+                    System.out.println("Case 1");
 
                     this.dispose();
                     break;
@@ -178,7 +180,9 @@ public class CreateCharacterScreen implements Screen {
                     gestorCharacter.processFunction(3);
                     gestorCharacter.getCharacter().info_Character();
                     System.out.println(gestorCharacter.getCharacter().info_Character());
-                    Resources.MAIN.setScreen(new RoomMountain());
+                    Resources.MAIN.setScreen(new RoomJardin());
+
+                    System.out.println("Case 2");
 
                     this.dispose();
                     break;
