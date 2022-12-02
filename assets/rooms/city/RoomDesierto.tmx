@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="164">
- <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Grass.tsx"/>
- <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Piedras2.tsx"/>
+ <tileset firstgid="1" source="tsx1/FondoDesierto.tsx"/>
  <imagelayer id="15" name="Desierto">
-  <image source="../../../../Downloads/FondoDesiertoEdit2.jpg" width="813" height="610"/>
+  <image source="png/FondoDesiertoEdit2.jpg" width="813" height="610"/>
  </imagelayer>
  <objectgroup color="#aa0000" id="16" name="Colisiones" tintcolor="#aa0000">
   <object id="154" x="0" y="1.01749" width="286.932" height="145.501"/>

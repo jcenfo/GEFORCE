@@ -30,7 +30,7 @@ public class RoomDesierto implements Screen {
 
     public RoomDesierto() {
         input = new Inputs();
-        screen = new Pantalla("rooms/city.tmx");
+        screen = new Pantalla("rooms/city/RoomDesierto.tmx");
         ///this.statusText = new StatusText(true);
         Resources.CURRENT_LOCATION = "City";
         int[] layers = {1, 3};
