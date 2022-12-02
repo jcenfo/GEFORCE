@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="153">
+ <tileset firstgid="1" source="tsx1/FondoAlcantarilla.tsx"/>
+
+ <imagelayer id="15" name="RoomAlcantarilla">
+   <image source="png/FondoAlcantarilla.jpg" width="813" height="610"/>
+ </imagelayer>
+ <objectgroup color="#aa0000" id="16" name="Colisiones">
+  <object id="146" x="-5.08744" y="-3.05246" width="225.882" height="241.145"/>
+  <object id="147" x="-8.1399" y="311.351" width="228.935" height="304.229"/>
+  <object id="148" x="218.76" y="531.129" width="599.3" height="83.434"/>
+  <object id="149" x="600.318" y="386.645" width="215.707" height="145.501"/>
+  <object id="150" x="219.777" y="-4.06995" width="599.3" height="167.886"/>
+  <object id="152" x="599.3" y="162.798" width="219.777" height="141.431"/>
+ </objectgroup>
+</map>

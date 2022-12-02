@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="156">
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Grass.tsx"/>
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Piedras2.tsx"/>
+ <imagelayer id="15" name="RoomFuturo">
+  <image source="../../../../Downloads/FondoArcadeEdit.jpg" width="813" height="610"/>
+ </imagelayer>
+ <objectgroup color="#aa0000" id="16" name="Colisiones">
+  <object id="147" x="-9.15739" y="-3.05246" width="229.952" height="300.159"/>
+  <object id="148" x="-7.12242" y="382.576" width="222.83" height="233.005"/>
+  <object id="149" x="214.69" y="529.094" width="600.318" height="84.4515"/>
+  <object id="152" x="597.266" y="-5.08744" width="215.707" height="536.216"/>
+  <object id="154" x="453.8" y="-8.1399" width="145.501" height="161.781"/>
+  <object id="155" x="219.777" y="-5.08744" width="144.483" height="154.658"/>
+ </objectgroup>
+</map>

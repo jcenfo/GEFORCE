@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="164">
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Grass.tsx"/>
+ <tileset firstgid="1" source="../../Desktop/PATRONES/GAME_GE_FORCE/game/assets/rooms/city/tsx1/Piedras2.tsx"/>
+ <imagelayer id="15" name="Desierto">
+  <image source="../../../../Downloads/FondoDesiertoEdit2.jpg" width="813" height="610"/>
+ </imagelayer>
+ <objectgroup color="#aa0000" id="16" name="Colisiones" tintcolor="#aa0000">
+  <object id="154" x="0" y="1.01749" width="286.932" height="145.501"/>
+  <object id="156" x="213.672" y="511.797" width="144.483" height="95.6439"/>
+  <object id="157" x="0" y="148.553" width="215.707" height="457.87"/>
+  <object id="158" x="368.331" y="1.01749" width="431.415" height="145.501"/>
+  <object id="159" x="584.038" y="146.518" width="215.707" height="457.87"/>
+  <object id="160" x="447.695" y="511.797" width="136.343" height="93.6089"/>
+  <object id="161" x="798.667" y="0" width="16" height="610.667"/>
+  <object id="162" x="449.333" y="605.333" width="370.667" height="5.33333"/>
+ </objectgroup>
+</map>
