@@ -64,7 +64,7 @@ public class FabricaCalabozos {
                 System.out.println(gestorCharacter.getCharacter().info_Character());
                 Stopwatch stopwatch  = new Stopwatch();
                 stopwatch.main(args);
-                Resources.MAIN.setScreen(new RoomMountain());
+                Resources.MAIN.setScreen(new RoomAlcantarilla());
                 break;
             case 2:
                 System.out.println("Estoy por elegir calabozo");
