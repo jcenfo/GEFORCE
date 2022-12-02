@@ -1,6 +1,5 @@
-package proxy.src.Proxy;
+package com.bisoft.game.patterns.Comportamiento.Proxy;
 
-import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -14,12 +13,13 @@ public class Stopwatch {
         try
         {
 
-            String secs = "30";
+            String secs = "500";
             int delay = 1000;
             int period = 1000;
             timer = new Timer();
             interval = Integer.parseInt(secs);
-            System.out.println(secs);
+//            System.out.println("Total time " + secs + " !!!!!!");
+//            System.out.println(secs);
             timer.scheduleAtFixedRate(new TimerTask() {
 
                 public void run() {
@@ -27,9 +27,7 @@ public class Stopwatch {
 
                 }
             }, delay, period);
-            System.out.println("Total time " + secs + " !!!!!!");
             stopwatch.tiempo(secs);
-            System.out.println("Total time " + secs + " !!!!!!");
         }
         catch (Exception e)
         {

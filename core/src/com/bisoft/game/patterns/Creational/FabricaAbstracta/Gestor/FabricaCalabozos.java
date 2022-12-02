@@ -1,15 +1,13 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor;
 
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
-import com.bisoft.game.menucharacter.JuegoCalabozo;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaAbstractaCharacter.GameCharacter;
-import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaGuerrero;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMago;
-import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMercenario;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
 import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
+import com.bisoft.game.patterns.Comportamiento.Proxy.Stopwatch;
 
 public class FabricaCalabozos {
 
@@ -18,6 +16,7 @@ public class FabricaCalabozos {
     private static Character arCharacter;
     private static LoreScreen loreScreen = new LoreScreen();
     private static FabricaCharacter gestorCharacter;
+    private static String[] args;
 
     // constructor
     public FabricaCalabozos() {
@@ -63,6 +62,8 @@ public class FabricaCalabozos {
                 gestorCharacter = new FabricaCharacter();
                 gestorCharacter.getCharacter().info_Character();
                 System.out.println(gestorCharacter.getCharacter().info_Character());
+                Stopwatch stopwatch  = new Stopwatch();
+                stopwatch.main(args);
                 Resources.MAIN.setScreen(new RoomMountain());
                 break;
             case 2:

@@ -1,8 +1,9 @@
-package proxy.src.Proxy;
+package com.bisoft.game.patterns.Comportamiento.Proxy;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProxyStopwatch implements IStopwatch{
+public class ProxyStopwatch implements IStopwatch {
 
     private IStopwatch stopwatch = new RealStopwatch();
     private static List<String> differentTimes;
@@ -10,20 +11,20 @@ public class ProxyStopwatch implements IStopwatch{
     static
     {
         differentTimes = new ArrayList<String>();
-        differentTimes.add("abc.com");
-        differentTimes.add("def.com");
-        differentTimes.add("ijk.com");
-        differentTimes.add("lnm.com");
+        differentTimes.add("500");
+        differentTimes.add("500");
+        differentTimes.add("500");
+        differentTimes.add("500");
     }
 
     @Override
     public void tiempo(String tiempo) throws Exception {
-        if(differentTimes.contains("30"))
+        if(differentTimes.contains(tiempo))
         {
 //            throw new Exception("Access Denied");
             stopwatch.tiempo(tiempo);
+        } else {
+            throw new Exception("Access Denied");
         }
-
-        throw new Exception("Access Denied");
     }
 }
