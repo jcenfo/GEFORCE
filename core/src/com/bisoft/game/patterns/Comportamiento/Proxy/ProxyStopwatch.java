@@ -11,10 +11,10 @@ public class ProxyStopwatch implements IStopwatch {
     static
     {
         differentTimes = new ArrayList<String>();
-        differentTimes.add("500");
-        differentTimes.add("500");
-        differentTimes.add("500");
-        differentTimes.add("500");
+        differentTimes.add("800");
+        differentTimes.add("800");
+        differentTimes.add("800");
+        differentTimes.add("800");
     }
 
     @Override

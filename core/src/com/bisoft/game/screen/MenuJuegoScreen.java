@@ -17,6 +17,7 @@ import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Ch
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MenuJuegoScreen implements Screen {
@@ -208,6 +209,8 @@ public class MenuJuegoScreen implements Screen {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             Render.print(e.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }

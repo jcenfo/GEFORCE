@@ -1,6 +1,7 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor;
 
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
+import com.bisoft.game.patterns.Comportamiento.Proxy.Tiempo_Mediador_DB.principal.main_mediadior;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaAbstractaCharacter.GameCharacter;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMago;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
@@ -8,6 +9,8 @@ import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 import com.bisoft.game.patterns.Comportamiento.Proxy.Stopwatch;
+
+import java.io.IOException;
 
 public class FabricaCalabozos {
 
@@ -52,7 +55,7 @@ public class FabricaCalabozos {
 
     //Opciones para los 3 tipos de personajes
 
-    public static String processFunction(int pOpc) {
+    public static String processFunction(int pOpc) throws IOException {
         String sMessage = "";
         switch (pOpc) {
             case 1:
@@ -63,8 +66,9 @@ public class FabricaCalabozos {
                 gestorCharacter.getCharacter().info_Character();
                 System.out.println(gestorCharacter.getCharacter().info_Character());
                 Stopwatch stopwatch  = new Stopwatch();
-                stopwatch.main(args);
+                main_mediadior.main(args);
                 Resources.MAIN.setScreen(new RoomDesierto());
+                stopwatch.main(args);
                 break;
             case 2:
                 System.out.println("Estoy por elegir calabozo");
@@ -87,10 +91,7 @@ public class FabricaCalabozos {
             default:
                 sMessage = "Invalid option";
         }
-
         return sMessage;
     }
-
-
 
 }

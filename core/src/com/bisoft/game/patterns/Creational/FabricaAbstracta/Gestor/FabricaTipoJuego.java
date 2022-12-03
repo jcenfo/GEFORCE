@@ -8,6 +8,10 @@ import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Ch
 import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
+import com.bisoft.game.patterns.Comportamiento.Proxy.Tiempo_Mediador_DB.principal.main_mediadior;
+
+import java.io.IOException;
+
 
 public class FabricaTipoJuego {
 
@@ -17,6 +21,7 @@ public class FabricaTipoJuego {
     private static LoreScreen loreScreen = new LoreScreen();
     private static FabricaCharacter gestorCharacter;
     private static String[] args;
+    public static main_mediadior mediadiorRecords = new main_mediadior();
 
     // constructor
     public FabricaTipoJuego() {
@@ -52,9 +57,10 @@ public class FabricaTipoJuego {
 
     //Opciones para los 3 tipos de personajes
 
-    public static String processFunction(int pOpc) {
+    public static String processFunction(int pOpc) throws IOException {
         String sMessage = "";
         Stopwatch stopwatch  = new Stopwatch();
+        main_mediadior mediadiorRecords = new main_mediadior();
 
         switch (pOpc) {
             case 1:
@@ -64,11 +70,13 @@ public class FabricaTipoJuego {
 //                gestorCharacter = new FabricaCharacter();
 //                gestorCharacter.getCharacter().info_Character();
 //                System.out.println(gestorCharacter.getCharacter().info_Character());
+                main_mediadior.main(args);
                 stopwatch.main(args);
                 Resources.MAIN.setScreen(new RoomAlcantarilla());
                 break;
             case 2:
                 System.out.println("Estoy por elegir calabozo");
+                main_mediadior.main(args);
                 stopwatch.main(args);
                 Resources.MAIN.setScreen(new RoomMountain());
                 break;

@@ -1,0 +1,24 @@
+package com.bisoft.game.patterns.Comportamiento.Proxy.Tiempo_Mediador_DB.canvas.colega.concreto;
+
+import com.bisoft.game.patterns.Comportamiento.Proxy.Tiempo_Mediador_DB.canvas.colega.interfaz.Componente;
+
+import java.io.*;
+
+public class Escribo extends Componente {
+
+	public Escribo() {
+		this.setTipo("Cronometro");
+	}
+	@Override
+	public void ejecutarAccion() throws IOException {
+		PrintStream out = new PrintStream(new FileOutputStream("hola.txt", true));
+
+		this.getMediador().guardar("Guardando record de " + this.getTipo());
+//		this.getMediador().mostrarHistorial();
+		System.out.println("hello");
+		System.setOut(out);
+
+	}
+
+
+}

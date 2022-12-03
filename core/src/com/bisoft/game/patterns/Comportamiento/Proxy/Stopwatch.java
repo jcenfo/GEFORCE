@@ -13,7 +13,7 @@ public class Stopwatch {
         try
         {
 
-            String secs = "500";
+            String secs = "800";
             int delay = 1000;
             int period = 1000;
             timer = new Timer();
