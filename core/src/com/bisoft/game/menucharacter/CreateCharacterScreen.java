@@ -13,6 +13,7 @@ import com.bisoft.game.screen.RoomMountain;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class CreateCharacterScreen implements Screen {
@@ -187,6 +188,8 @@ public class CreateCharacterScreen implements Screen {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             Render.print(e.toString());
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }

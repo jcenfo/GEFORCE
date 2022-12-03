@@ -11,6 +11,7 @@ import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharac
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class JuegoCalabozo implements Screen {
@@ -182,6 +183,8 @@ public class JuegoCalabozo implements Screen {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             Render.print(e.toString());
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }

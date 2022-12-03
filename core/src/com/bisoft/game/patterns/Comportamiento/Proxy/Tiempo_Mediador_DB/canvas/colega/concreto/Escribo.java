@@ -11,11 +11,11 @@ public class Escribo extends Componente {
 	}
 	@Override
 	public void ejecutarAccion() throws IOException {
-		PrintStream out = new PrintStream(new FileOutputStream("hola.txt", true));
+		PrintStream out = new PrintStream(new FileOutputStream("timeRecords.txt", true));
 
 		this.getMediador().guardar("Guardando record de " + this.getTipo());
 //		this.getMediador().mostrarHistorial();
-		System.out.println("hello");
+		System.out.println("Guardando records en base de datos..");
 		System.setOut(out);
 
 	}
