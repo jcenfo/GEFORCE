@@ -20,7 +20,7 @@ public class Pantalla {
 
     //Variables para la generacion del mapa
     private TmxMapLoader MAPLOADER;
-    private TiledMap MAP;
+    public TiledMap MAP;
     private OrthogonalTiledMapRenderer RENDERER;
     private MapProperties PROP;
 

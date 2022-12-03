@@ -1,14 +1,14 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor;
 
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
-import com.bisoft.game.patterns.Comportamiento.Proxy.Tiempo_Mediador_DB.principal.main_mediadior;
+import com.bisoft.game.patterns.Comportamiento.Tiempo_Mediador_DB.principal.main_mediadior;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaAbstractaCharacter.GameCharacter;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMago;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
 import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
-import com.bisoft.game.patterns.Comportamiento.Proxy.Stopwatch;
+import com.bisoft.game.patterns.Structural.Proxy.*;
 
 import java.io.IOException;
 
@@ -67,7 +67,7 @@ public class FabricaCalabozos {
                 System.out.println(gestorCharacter.getCharacter().info_Character());
                 Stopwatch stopwatch  = new Stopwatch();
                 main_mediadior.main(args);
-                Resources.MAIN.setScreen(new RoomDesierto());
+                Resources.MAIN.setScreen(new RoomDelTiempo());
                 stopwatch.main(args);
                 break;
             case 2:

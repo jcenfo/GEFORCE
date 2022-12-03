@@ -22,17 +22,16 @@ import com.bisoft.game.utils.WorldContactListener;
 
 import java.util.Objects;
 
-public class RoomMazmorra implements Screen {
-
+public class RoomDelTiempo implements Screen {
     private Texture rectangle;
     private Render render = new Render();
     private Inputs input;
     private Pantalla screen;
     private float posicionAnteriorX = -1;
     private float posicionAnteriorY =-1;
-    private Player player;
+     private Player player;
     private TextureAtlas atlas;
-    // private Dialogs dialogs;
+   // private Dialogs dialogs;
     //private StatusText statusText;
     private FabricaCharacter gestor = new FabricaCharacter();
     private int actual = 0;
@@ -40,14 +39,14 @@ public class RoomMazmorra implements Screen {
 
     ShapeRenderer border;
 
-    public RoomMazmorra() {
+    public RoomDelTiempo() {
         input = new Inputs();
-        screen = new Pantalla("rooms/city/RoomMazmorraDesiertoTerror.tmx");
+        screen = new Pantalla("rooms/city/RoomDelTiempo.tmx");
         ///this.statusText = new StatusText(true);
         Resources.CURRENT_LOCATION = "City";
         int[] layers = {1, 3};
         atlas = new TextureAtlas("makecharacter/Pack/playerAssets.pack");
-        player = new Player(atlas, 770, 350, this.screen.getWorld());
+        player = new Player(atlas, 417, 350, this.screen.getWorld());
         screen.getWorld().setContactListener(new WorldContactListener());
     }
     @Override
@@ -61,8 +60,8 @@ public class RoomMazmorra implements Screen {
     public void render(float delta) {
         render.clearScreen();
 
-        screen.update(delta);
-        player.update(delta);
+       screen.update(delta);
+       player.update(delta);
 
         render.Batch.setProjectionMatrix(screen.getCAMERA().combined);
         render.Batch.begin();
@@ -125,22 +124,26 @@ public class RoomMazmorra implements Screen {
 
             MyRectangle playerMyRectangle =  new MyRectangleAdapter(player.getBoundingRectangle(), "player");
 
+            boolean colisionConSalidaIzquierda = false;
+            boolean colisionConSalidaDerecha = false;
             for (RectangleMapObject rectangle : colisiones.getByType(RectangleMapObject.class)) {
                 MyRectangle paredMyRectangle = new MyRectangleAdapter(rectangle.getRectangle(), rectangle.getName());
                 Colision ladoColision = gestorDecorador.getColision(playerMyRectangle, paredMyRectangle);
                 if (ladoColision.colision()) {
                     System.out.println("Revisando colisiones de " + playerMyRectangle.getName() + " con " + paredMyRectangle.getName() + " = " + ladoColision);
                     if (paredMyRectangle.getName().equalsIgnoreCase("entradaSiguiente")){
-                        Resources.MAIN.setScreen(new RoomDesierto());
+                        Resources.MAIN.setScreen(new RoomMazmorra());
 
                     } else if(rectangle.getName().equalsIgnoreCase("entradaAnterior")){
-                        Resources.MAIN.setScreen(new RoomDelTiempo());
+                        System.out.println(paredMyRectangle.getName());
                     }
                 }
                 colisionArriba = colisionArriba || ladoColision.colisionArriba();
                 colisionAbajo = colisionAbajo || ladoColision.colisionAbajo();
                 colisionDerecha = colisionDerecha || ladoColision.colisionDerecha();
                 colisionIzquierda = colisionIzquierda || ladoColision.colisionIzquierda();
+
+
 
 
             }
@@ -171,5 +174,4 @@ public class RoomMazmorra implements Screen {
         }
 
     }
-
 }// Termina RoomMountain

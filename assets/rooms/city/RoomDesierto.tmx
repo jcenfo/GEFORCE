@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="164">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="50" height="38" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="167">
  <tileset firstgid="1" source="tsx1/FondoDesierto.tsx"/>
  <imagelayer id="15" name="Desierto">
   <image source="png/FondoDesiertoEdit2.jpg" width="813" height="610"/>
  </imagelayer>
  <objectgroup color="#aa0000" id="16" name="Colisiones" tintcolor="#aa0000">
-  <object id="154" x="0" y="1.01749" width="286.932" height="145.501"/>
-  <object id="156" x="213.672" y="511.797" width="144.483" height="95.6439"/>
-  <object id="157" x="0" y="148.553" width="215.707" height="457.87"/>
-  <object id="158" x="368.331" y="1.01749" width="431.415" height="145.501"/>
-  <object id="159" x="584.038" y="146.518" width="215.707" height="457.87"/>
-  <object id="160" x="447.695" y="511.797" width="136.343" height="93.6089"/>
-  <object id="161" x="798.667" y="0" width="16" height="610.667"/>
-  <object id="162" x="449.333" y="605.333" width="370.667" height="5.33333"/>
+  <object id="154" name="ParedA" x="0" y="1.01749" width="801.99" height="145.501"/>
+  <object id="156" name="ParedB" x="196.944" y="523.243" width="161.211" height="85.0786"/>
+  <object id="157" name="ParedC" x="5.28265" y="137.108" width="215.707" height="471.076"/>
+  <object id="159" name="ParedE" x="584.038" y="328.769" width="215.707" height="280.901"/>
+  <object id="160" name="ParedF" x="447.695" y="511.797" width="153.952" height="96.2502"/>
+  <object id="166" name="ParedG" x="594.298" y="117.979" width="205.143" height="136.468"/>
+  <object id="164" name="entradaAnterior" x="796.8" y="238.6" width="2.64131" height="99.4899"/>
+  <object id="165" name="entradaSiguiente" x="355.699" y="606.184" width="95.0877" height="2.64133"/>
  </objectgroup>
 </map>

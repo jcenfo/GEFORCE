@@ -1,15 +1,16 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor;
 
 import com.bisoft.game.menucharacter.CreateCharacterScreen;
-import com.bisoft.game.patterns.Comportamiento.Proxy.Stopwatch;
+
+import com.bisoft.game.patterns.Comportamiento.Tiempo_Mediador_DB.principal.main_mediadior;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaAbstractaCharacter.GameCharacter;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.FabricaConcreta.FabricaMago;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
 import com.bisoft.game.screen.*;
 import com.bisoft.game.utils.Render;
 import com.bisoft.game.utils.Resources;
-import com.bisoft.game.patterns.Comportamiento.Proxy.Tiempo_Mediador_DB.principal.main_mediadior;
-
+import com.bisoft.game.patterns.Comportamiento.Tiempo_Mediador_DB.principal.main_mediadior;
+import com.bisoft.game.patterns.Structural.Proxy.*;
 import java.io.IOException;
 
 
@@ -72,13 +73,13 @@ public class FabricaTipoJuego {
 //                System.out.println(gestorCharacter.getCharacter().info_Character());
                 main_mediadior.main(args);
                 stopwatch.main(args);
-                Resources.MAIN.setScreen(new RoomAlcantarilla());
+                Resources.MAIN.setScreen(new RoomArcade());
                 break;
             case 2:
                 System.out.println("Estoy por elegir calabozo");
                 main_mediadior.main(args);
                 stopwatch.main(args);
-                Resources.MAIN.setScreen(new RoomMountain());
+                Resources.MAIN.setScreen(new RoomAlcantarilla());
                 break;
             case 3:
                 System.out.println("Atras");
