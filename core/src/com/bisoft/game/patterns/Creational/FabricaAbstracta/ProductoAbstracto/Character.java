@@ -1,5 +1,7 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto;
 
+import com.bisoft.game.patterns.Comportamiento.patronEstado.abstracto.Estado;
+
 public interface Character {
 
     //Metodos para utilizar en la fabrica
@@ -22,6 +24,14 @@ public interface Character {
     int getAttack();
 
 
+    void recibirDanio(int danio);
 
+    void setEstado(Estado estado);
 
+    void ejecutarAccion(Character character);
 }
+
+
+
+
+

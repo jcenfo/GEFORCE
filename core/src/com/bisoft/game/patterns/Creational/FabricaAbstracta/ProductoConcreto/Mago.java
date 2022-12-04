@@ -1,12 +1,10 @@
 package com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoConcreto;
 
-import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
-
-public class Mago implements Character {
+public class Mago extends Personaje{
 
     private static int level;
-    private static int defense;
-    private static int attack;
+    private static int defense = 7;
+    private static int attack = 2;
     private static final String tipeCharacter = "Mago";
     private static int experience;
 

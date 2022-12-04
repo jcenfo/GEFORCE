@@ -5,12 +5,19 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.utils.Array;
+import com.bisoft.game.patterns.Comportamiento.patronCommand.Comando_Concreto.AtacarAventurero;
+import com.bisoft.game.patterns.Comportamiento.patronCommand.Comando_Concreto.AtacarJefe;
+import com.bisoft.game.patterns.Comportamiento.patronCommand.principal.Invoker;
+import com.bisoft.game.patterns.Comportamiento.patronEstado.concreto.Berserk;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
+import com.bisoft.game.patterns.Creational.FabricaAbstracta.ProductoAbstracto.Character;
+import com.bisoft.game.patterns.Creational.MetodoFabrica.CreadorConcreto.FabricaDeEnemigos;
+import com.bisoft.game.patterns.Creational.MetodoFabrica.Producto.Enemigo;
 
 public class Player extends Sprite {
 
-    private  float X;
-    private  float Y;
+    private float X;
+    private float Y;
     private static float XF;
     private static float YF;
     private int SPEED = 2;
@@ -36,6 +43,8 @@ public class Player extends Sprite {
 
     private TextureRegion playerStand;
     private FabricaCharacter gestorCharacte = new FabricaCharacter();
+
+    private FabricaDeEnemigos gestorEnemy = new FabricaDeEnemigos();
 
     public Player(TextureAtlas pAtlas, float pX, float pY, World pWorld) {
 
@@ -145,6 +154,34 @@ public class Player extends Sprite {
             currentState = getState();
         }
     }
+    public void atacar(String tecla){
+        if (tecla.equals("espacio")) {
+            Character personaje = gestorCharacte.getCharacter();
+            Enemigo enemigo = gestorEnemy.crearEnemigo("Normal");
+            Invoker ivk = new Invoker();
+            Berserk berserk = new Berserk();
+
+            AtacarJefe atacarJefe = new AtacarJefe(enemigo,1);
+            ivk.recibirTarea(atacarJefe);
+            ivk.realizarAtaque();
+
+            if (personaje.getDefense() == 0){
+                System.out.println("El aventurero ha muerto");
+
+            } else {
+                AtacarAventurero atacarAventurero = new AtacarAventurero(personaje,1);
+                ivk.recibirTarea(atacarAventurero);
+                ivk.realizarAtaque();
+                if (personaje.getDefense() == 3){
+                    personaje.setEstado(berserk);
+                    personaje.ejecutarAccion(personaje);
+                    System.out.println("Ataque despues de entrar en modo Berserk: " + personaje.getAttack());
+                }
+
+            }
+        }
+    }
+
 
     public void update(float delta) {
         setPosition(getX() - getWidth() / 2, getY() - getHeight() / 2); //Para que se este en el mismo lugar que el cuerpo y la imagen

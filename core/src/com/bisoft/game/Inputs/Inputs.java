@@ -5,11 +5,13 @@ import com.badlogic.gdx.InputProcessor;
 import com.bisoft.game.utils.Resources;
 
 public class Inputs implements InputProcessor {
-    private boolean down = false, up = false, enter = false, clicked = false, left = false, right = false;
+    private boolean down = false, up = false, enter = false, clicked = false, left = false, right = false, space = false;
     private int mouseX, mouseY;
 
     //get
-
+    public boolean isSpace() {
+        return space;
+    }
     public boolean isDown() {
         return down;
     }
@@ -65,6 +67,8 @@ public class Inputs implements InputProcessor {
             this.left = true;
         if (keycode == Input.Keys.RIGHT)
             this.right = true;
+        if (keycode == Input.Keys.SPACE)
+            this.space = true;
         if (keycode == Input.Keys.ENTER || keycode == Input.Keys.NUMPAD_ENTER)
             this.enter = true;
 
@@ -81,6 +85,8 @@ public class Inputs implements InputProcessor {
             this.left = false;
         if (keycode == Input.Keys.RIGHT)
             this.right = false;
+        if (keycode == Input.Keys.SPACE)
+            this.space = false;
         if (keycode == Input.Keys.ENTER || keycode == Input.Keys.NUMPAD_ENTER)
             this.enter = false;
 

@@ -113,8 +113,6 @@ public class RoomMountain implements Screen {
         } else {
             player.move("none");
         }
-
-
     }
 
 }// Termina RoomMountain

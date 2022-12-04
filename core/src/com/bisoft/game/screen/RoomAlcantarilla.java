@@ -11,6 +11,7 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.characters.Player;
+import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
 import com.bisoft.game.patterns.Structural.Adapter.adaptador.MyRectangleAdapter;
 import com.bisoft.game.patterns.Structural.Adapter.objetos.MyRectangle;
@@ -24,7 +25,9 @@ import com.bisoft.game.utils.WorldContactListener;
 import java.util.Objects;
 
 public class RoomAlcantarilla implements Screen {
+    private Text instruction;
 
+    private Text gameName;
 
     private Texture rectangle;
     private Render render = new Render();
@@ -51,6 +54,9 @@ public class RoomAlcantarilla implements Screen {
         atlas = new TextureAtlas("makecharacter/Pack/playerAssets.pack");
         player = new Player(atlas, 770, 260, this.screen.getWorld());
         screen.getWorld().setContactListener(new WorldContactListener());
+        this.gameName = new Text(Resources.GAME_FONT, 320, 590, 20, "Room alcantarilla");
+        this.instruction = new Text(Resources.GAME_FONT, 280, 50, 20, "Pelearás contra el jefe final");
+
     }
     @Override
     public void show() {
@@ -69,7 +75,8 @@ public class RoomAlcantarilla implements Screen {
         render.Batch.setProjectionMatrix(screen.getCAMERA().combined);
         render.Batch.begin();
         //this.statusText.draw();
-
+        gameName.draw();
+        instruction.draw();
         player.draw(render.Batch);
         if (!Objects.equals(Resources.dialog, "")) {
             //this.dialogs.setText(Resources.dialog);

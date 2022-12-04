@@ -46,5 +46,7 @@ public abstract class Enemigo {
 
     public abstract String getDescripcion();
 
-
+    public void recibirDanio(int danio){
+        System.out.println("El enemigo ha recibido danio\n");
+    }
 }

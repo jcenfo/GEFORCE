@@ -10,6 +10,7 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.characters.Player;
+import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
 import com.bisoft.game.patterns.Structural.Adapter.adaptador.MyRectangleAdapter;
 import com.bisoft.game.patterns.Structural.Adapter.objetos.MyRectangle;
@@ -24,6 +25,7 @@ import java.util.Objects;
 
 public class RoomJardin implements Screen {
 
+    private Text gameName;
 
     private Texture rectangle;
     private Render render = new Render();
@@ -50,6 +52,8 @@ public class RoomJardin implements Screen {
         atlas = new TextureAtlas("makecharacter/Pack/playerAssets.pack");
         player = new Player(atlas, 770, 270, this.screen.getWorld());
         screen.getWorld().setContactListener(new WorldContactListener());
+        this.gameName = new Text(Resources.GAME_FONT, 320, 590, 20, "Room jardín");
+
     }
     @Override
     public void show() {
@@ -68,7 +72,7 @@ public class RoomJardin implements Screen {
         render.Batch.setProjectionMatrix(screen.getCAMERA().combined);
         render.Batch.begin();
         //this.statusText.draw();
-
+        gameName.draw();
         player.draw(render.Batch);
         if (!Objects.equals(Resources.dialog, "")) {
             //this.dialogs.setText(Resources.dialog);

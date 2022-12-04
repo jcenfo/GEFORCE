@@ -10,6 +10,7 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.characters.Player;
+import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
 import com.bisoft.game.patterns.Structural.Adapter.adaptador.MyRectangleAdapter;
 import com.bisoft.game.patterns.Structural.Adapter.objetos.MyRectangle;
@@ -23,6 +24,7 @@ import com.bisoft.game.utils.WorldContactListener;
 import java.util.Objects;
 
 public class RoomArcade implements Screen {
+    private Text gameName;
 
     private Texture rectangle;
     private Render render = new Render();
@@ -49,6 +51,8 @@ public class RoomArcade implements Screen {
         atlas = new TextureAtlas("makecharacter/Pack/playerAssets.pack");
         player = new Player(atlas, 400, 580, this.screen.getWorld());
         screen.getWorld().setContactListener(new WorldContactListener());
+        this.gameName = new Text(Resources.GAME_FONT, 20, 590, 20, "Room arcade");
+
     }
     @Override
     public void show() {
@@ -67,6 +71,7 @@ public class RoomArcade implements Screen {
         render.Batch.setProjectionMatrix(screen.getCAMERA().combined);
         render.Batch.begin();
         //this.statusText.draw();
+        gameName.draw();
 
         player.draw(render.Batch);
         if (!Objects.equals(Resources.dialog, "")) {

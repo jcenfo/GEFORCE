@@ -10,6 +10,7 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.bisoft.game.Inputs.Inputs;
 import com.bisoft.game.characters.Player;
+import com.bisoft.game.elements.Text;
 import com.bisoft.game.patterns.Creational.FabricaAbstracta.Gestor.FabricaCharacter;
 import com.bisoft.game.patterns.Structural.Adapter.adaptador.MyRectangleAdapter;
 import com.bisoft.game.patterns.Structural.Adapter.objetos.MyRectangle;
@@ -23,6 +24,10 @@ import com.bisoft.game.utils.WorldContactListener;
 import java.util.Objects;
 
 public class RoomDelTiempo implements Screen {
+
+    private Text gameName;
+    private Text instruction;
+
     private Texture rectangle;
     private Render render = new Render();
     private Inputs input;
@@ -48,6 +53,10 @@ public class RoomDelTiempo implements Screen {
         atlas = new TextureAtlas("makecharacter/Pack/playerAssets.pack");
         player = new Player(atlas, 417, 350, this.screen.getWorld());
         screen.getWorld().setContactListener(new WorldContactListener());
+        this.gameName = new Text(Resources.GAME_FONT, 320, 590, 20, "Room del tiempo");
+        this.instruction = new Text(Resources.GAME_FONT, 280, 50, 20, "Presione espacio para atacar");
+
+
     }
     @Override
     public void show() {
@@ -66,7 +75,8 @@ public class RoomDelTiempo implements Screen {
         render.Batch.setProjectionMatrix(screen.getCAMERA().combined);
         render.Batch.begin();
         //this.statusText.draw();
-
+        this.gameName.draw();
+        this.instruction.draw();
         player.draw(render.Batch);
         if (!Objects.equals(Resources.dialog, "")) {
             //this.dialogs.setText(Resources.dialog);
@@ -115,6 +125,11 @@ public class RoomDelTiempo implements Screen {
             posicionAnteriorX = player.getX();
             posicionAnteriorY = player.getY();
         }
+        if (input.isSpace()) {
+
+            player.atacar("espacio");
+
+        }
 
         if (input.isUp() || input.isDown() || input.isRight() || input.isLeft() || input.isEnter()) {
             boolean colisionArriba = false;
@@ -124,8 +139,7 @@ public class RoomDelTiempo implements Screen {
 
             MyRectangle playerMyRectangle =  new MyRectangleAdapter(player.getBoundingRectangle(), "player");
 
-            boolean colisionConSalidaIzquierda = false;
-            boolean colisionConSalidaDerecha = false;
+
             for (RectangleMapObject rectangle : colisiones.getByType(RectangleMapObject.class)) {
                 MyRectangle paredMyRectangle = new MyRectangleAdapter(rectangle.getRectangle(), rectangle.getName());
                 Colision ladoColision = gestorDecorador.getColision(playerMyRectangle, paredMyRectangle);
