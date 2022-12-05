@@ -4,7 +4,7 @@ public class Cenfomonedas implements IComponenteProducto {
 
 
     public int getValor() {
-        return valor;
+        return 1;
     }
 
     public void setValor(int valor) {

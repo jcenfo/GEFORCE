@@ -1,7 +1,5 @@
 package com.bisoft.game.patterns.Creational.Builder.objetos;
 
-import java.security.PublicKey;
-
 public class Armas implements IComponenteProducto {
     private int id;
 

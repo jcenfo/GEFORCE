@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class BuilderItems extends AComponenteProducto {
 
     public BuilderItems(){
-        this.setIndice(5);
+        this.setIndice(8);
     }
 
 
@@ -29,7 +29,7 @@ public class BuilderItems extends AComponenteProducto {
     @Override
     public void construirComponente(int pId, String pNombre, int pNivel, String pDescripcion) throws Exception {
 
-        throw new Exception("La funcion [consstruirComponente] con cuatro parametros no esta disponible");
+        throw new Exception("La funcion [consstruirComponente] con cuatro parametros no esta disponible e");
 
     }
 

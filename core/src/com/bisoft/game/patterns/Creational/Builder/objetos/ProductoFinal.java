@@ -1,8 +1,5 @@
 package com.bisoft.game.patterns.Creational.Builder.objetos;
 
-import com.bisoft.game.patterns.Creational.Builder.objetos.Habitacion;
-import com.bisoft.game.patterns.Creational.Builder.objetos.Items;
-
 public class ProductoFinal implements IComponenteProducto {
 
     private int id;

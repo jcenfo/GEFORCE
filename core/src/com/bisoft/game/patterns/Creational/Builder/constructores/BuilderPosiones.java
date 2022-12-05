@@ -1,6 +1,5 @@
 package com.bisoft.game.patterns.Creational.Builder.constructores;
 
-import com.bisoft.game.patterns.Creational.Builder.constructores.AComponenteProducto;
 import com.bisoft.game.patterns.Creational.Builder.objetos.*;
 
 
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 public class BuilderPosiones  extends AComponenteProducto {
 
     public BuilderPosiones(){
-        this.setIndice(7);
+        this.setIndice(1);
     }
 
     @Override

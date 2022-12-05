@@ -31,6 +31,8 @@ public class MenuJuegoScreen implements Screen {
     private static Text countDownLabel;
 
     private ArrayList<Text> options;
+
+    private Text opcionTienda;
     private Images image;
     private FabricaCharacter gestorCharacter;
 
@@ -54,6 +56,7 @@ public class MenuJuegoScreen implements Screen {
         titulo = new Text(Resources.GAME_FONT, 160, 450, 40, "Seleccione Tipo de Juego");
         countDownLabel = new Text(Resources.GAME_FONT, 160, 450, 40, "Seleccione Tipo de Juego");
         options = new ArrayList<>();
+        opcionTienda = new Text();
         gestorCharacter = new FabricaCharacter();
         //gestorPrototipo = new GestorPrototipo(0, 0, 0, 0);
     }
@@ -62,7 +65,6 @@ public class MenuJuegoScreen implements Screen {
     public void show() {
         generateMenu();
         Gdx.input.setInputProcessor(input);
-
     }
 
     @Override
@@ -71,9 +73,11 @@ public class MenuJuegoScreen implements Screen {
         render.Batch.begin();
         image.draw();
         titulo.draw();
+        opcionTienda.draw();
         for (Text mText : this.options) {
             mText.draw();
         }
+
 //        render.Batch.draw(guerrero, 150, 250);
 //        render.Batch.draw(mercenario, 350, 250);
 //        render.Batch.draw(mago, 550, 250);
@@ -102,6 +106,7 @@ public class MenuJuegoScreen implements Screen {
         dispose();
     }
 
+
     @Override
     public void dispose() {
     }
@@ -109,7 +114,7 @@ public class MenuJuegoScreen implements Screen {
         try {
             if (this.input.isRight()) {
                 this.actual++;
-                if (this.actual > 3) {
+                if (this.actual > 4) {
                     this.actual = 0;
                 }
                 Thread.sleep(200);
@@ -118,11 +123,12 @@ public class MenuJuegoScreen implements Screen {
             if (this.input.isLeft()) {
                 this.actual--;
                 if (this.actual < 0) {
-                    this.actual = 3;
+                    this.actual = 4;
                 }
                 Thread.sleep(200);
                 changeOptionColor(actual);
             }
+
             if (this.input.isEnter()) {
                 executeAction();
             }
@@ -135,6 +141,8 @@ public class MenuJuegoScreen implements Screen {
     private void generateMenu() {
         int mFontSize = 25;
 
+
+
 //        this.options.add(new Text("Guerrero", mFontSize, Resources.GAME_FONT));
 //        this.options.add(new Text("Mercenario", mFontSize, Resources.GAME_FONT));
 //        this.options.add(new Text("Mago", mFontSize, Resources.GAME_FONT));
@@ -142,23 +150,34 @@ public class MenuJuegoScreen implements Screen {
         this.options.add(new Text("Elegir Calobozos", mFontSize, Resources.GAME_FONT));
         this.options.add(new Text("        Salir", mFontSize, Resources.GAME_FONT));
         this.options.add(new Text("        Atras", mFontSize, Resources.GAME_FONT));
+        this.options.add(new Text("        Tienda", mFontSize, Resources.GAME_FONT));
 
 
         for (int i = 0; i < options.size(); i++) {
 
             if (i == 0) {
                 this.options.get(i).setX(100);
+                this.options.get(i).setY(200);
             }
             if (i == 1) {
                 this.options.get(i).setX(230);
+                this.options.get(i).setY(200);
             }
             if (i == 2) {
                 this.options.get(i).setX(450);
+                this.options.get(i).setY(200);
             }
             if (i == 3) {
                 this.options.get(i).setX(600);
+                this.options.get(i).setY(200);
             }
-            this.options.get(i).setY(200);
+            if (i == 4) {
+                this.options.get(i).setX(300);
+                this.options.get(i).setY(300);
+
+
+            }
+
 
         }
 
@@ -169,8 +188,10 @@ public class MenuJuegoScreen implements Screen {
     private void changeOptionColor(int pId) {
         for (Text mTemp : this.options) {
             mTemp.setColor(Color.WHITE);
+            opcionTienda.setColor(Color.WHITE);
             if (pId >= 0) {
                 this.options.get(pId).setColor(Color.FIREBRICK);
+                opcionTienda.setColor(Color.FIREBRICK);
                 this.actual = pId;
             }
         }
@@ -199,6 +220,16 @@ public class MenuJuegoScreen implements Screen {
 
                 case 3:
                     gestorCalabozos.processFunction(4);
+
+                    this.dispose();
+                    break;
+                case 4:
+                    gestorCalabozos.processFunction(5);
+
+                    this.dispose();
+                    break;
+                case 5:
+                    gestorCalabozos.processFunction(6);
 
                     this.dispose();
                     break;

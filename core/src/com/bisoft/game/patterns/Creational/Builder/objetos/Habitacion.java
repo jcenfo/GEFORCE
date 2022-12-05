@@ -2,7 +2,7 @@ package com.bisoft.game.patterns.Creational.Builder.objetos;
 
 public class Habitacion implements IComponenteProducto {
     public String getEnemigo() {
-        return "Enemigo Jefe";
+        return " Jefe";
     }
 
     public void setEnemigo(String enemigo) {
@@ -10,7 +10,7 @@ public class Habitacion implements IComponenteProducto {
     }
 
     public String getRompecabezas() {
-        return rompecabezas;
+        return "Interno";
     }
 
     public void setRompecabezas(String rompecabezas) {
@@ -18,15 +18,17 @@ public class Habitacion implements IComponenteProducto {
     }
 
     public String getCofre() {
-        return cofre;
+        return "Item oculto";
     }
+
+
 
     public void setCofre(String cofre) {
         this.cofre = cofre;
     }
 
     public int getAreasRec() {
-        return areasRec;
+        return 3;
     }
 
     public void setAreasRec(int areasRec) {
@@ -34,7 +36,7 @@ public class Habitacion implements IComponenteProducto {
     }
 
     public int getCheckpoint() {
-        return checkpoint;
+        return 1;
     }
 
     public void setCheckpoint(int checkpoint) {
@@ -42,7 +44,7 @@ public class Habitacion implements IComponenteProducto {
     }
 
     public String getPuerta() {
-        return puerta;
+        return "puerta";
     }
 
     public void setPuerta(String puerta) {
@@ -50,7 +52,7 @@ public class Habitacion implements IComponenteProducto {
     }
 
     public boolean isEstadoJefe() {
-        return estadoJefe;
+        return false;
     }
 
     public void setEstadoJefe(boolean estadoJefe) {
@@ -107,7 +109,7 @@ public class Habitacion implements IComponenteProducto {
 
 
     public String mostrarInformacion()  {
-        return "";
+        return "Habitacion con enemigo: " + this.getEnemigo() + ", contiene cofre con :" + this.getCofre() + ", con una cantidad de areas de recuperacion de: "+ this.getAreasRec() + ", un checkpoint de: " + this.getCheckpoint() ;
     }
 
 

@@ -30801,3 +30801,251 @@ Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
 99
 98
 97
+Estoy jugando default
+Tipe of Character is: Guerrero, This Level is : 0, This experience is : 0, This defense is : 7, This attack is : 2
+Guardando records en base de datos..
+Reporte del historial/records Jugador HEROE
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+1. guardando record de cronometro
+
+800
+608
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+799
+798
+797
+796
+795
+794
+793
+792
+791
+790
+789
+788
+787
+786
+785
+784
+783
+782
+781
+780
+779
+778
+777
+776
+775
+774
+773
+772
+771
+770
+769
+768
+767
+766
+765
+764
+763
+762
+761
+760
+759
+758
+757
+756
+755
+754
+753
+752
+751
+750
+749
+748
+747
+746
+745
+744
+743
+742
+741
+740
+739
+738
+737
+736
+735
+734
+733
+732
+731
+730
+729
+728
+727
+726
+725
+724
+723
+722
+721
+720
+719
+718
+717
+716
+715
+714
+713
+712
+711
+710
+709
+708
+707
+706
+705
+704
+703
+702
+701
+700
+699
+698
+697
+696
+695
+694
+Estoy en Mago
+Estoy jugando default
+Tipe of Character is: Guerrero, This Level is : 0, This experience is : 0, This defense is : 7, This attack is : 2
+Guardando records en base de datos..
+Reporte del historial/records Jugador HEROE
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+1. guardando record de cronometro
+
+800
+608
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+799
+798
+797
+796
+795
+794
+793
+792
+Estoy jugando default
+Tipe of Character is: Guerrero, This Level is : 0, This experience is : 0, This defense is : 7, This attack is : 2
+Guardando records en base de datos..
+Reporte del historial/records Jugador HEROE
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+1. guardando record de cronometro
+
+800
+608
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+799
+798
+797
+796
+795
+794
+Estoy por elegir calabozo
+Atras
+Estoy en guerrero
+Prueba
+Prueba
+Prueba
+800
+608
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Estoy jugando default
+Tipe of Character is: Guerrero, This Level is : 0, This experience is : 0, This defense is : 7, This attack is : 2
+Guardando records en base de datos..
+Reporte del historial/records Jugador HEROE
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+1. guardando record de cronometro
+
+800
+608
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+799
+798
+797
+796
+795
+Estoy jugando default
+Tipe of Character is: Guerrero, This Level is : 0, This experience is : 0, This defense is : 7, This attack is : 2
+Guardando records en base de datos..
+Reporte del historial/records Jugador HEROE
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+1. guardando record de cronometro
+
+800
+608
+Comenzando JUEGO CALABOZOS Y VAMPIROS, tiempo: 800
+799
+798
+797
+796
+795
+794
+793
+792
+Error: La funcion [consstruirComponente] con siete parametros no esta disponible
+Error: La funcion [consstruirComponente] con dos parametros no esta disponible
+Error: La funcion [consstruirComponente] con un parametros no esta disponible jjj
+Error: La funcion [consstruirComponente] con un parametros no esta disponible
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Posion: 185 ,de nivel :1 ,nombre: Magnatus ,se describe como: Concede al que la bebe poder tener una fuerza física sobrenatural
+Error: La funcion [consstruirComponente] con un parametros no esta disponible jjj
+Error: La funcion [consstruirComponente] con dos parametros no esta disponible
+Error: La funcion [consstruirComponente] con siete parametros no esta disponible
+Error: La funcion [consstruirComponente] con un parametros no esta disponible
+Error: La funcion [consstruirComponente] con siete parametros no esta disponible
+Error: La funcion [consstruirComponente] con un parametros no esta disponible
+Estoy en guerrero
+Posion: 185 ,de nivel :1 ,nombre: Magnatus ,se describe como: Concede al que la bebe poder tener una fuerza física sobrenatural
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Estoy en guerrero
+Posion: 185 ,de nivel :1 ,nombre: Magnatus ,se describe como: Concede al que la bebe poder tener una fuerza física sobrenatural
+Error: La funcion [consstruirComponente] con un parametros no esta disponible jjj
+Error: La funcion [consstruirComponente] con dos parametros no esta disponible
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Prueba1
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Prueba1
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Prueba2
+Posion: 185 ,de nivel :1 ,nombre: Magnatus ,se describe como: Concede al que la bebe poder tener una fuerza física sobrenatural
+Prueba3
+Error: La funcion [consstruirComponente] con un parametros no esta disponible jjj
+Prueba4
+Error: La funcion [consstruirComponente] con dos parametros no esta disponible
+Prueba5
+Error: La funcion [consstruirComponente] con siete parametros no esta disponible
+Prueba6
+Error: La funcion [consstruirComponente] con un parametros no esta disponible
+Prueba7
+Prueba7
+Estoy en guerrero
+Prueba1
+El arma contiene un identificador de numero: 246, De nivel: 2, Descripcion: Esta arma contiene una potencia duplicada y un alcance de mayor nivel.
+Prueba2
+Posion: 185 ,de nivel :1 ,nombre: Magnatus ,se describe como: Concede al que la bebe poder tener una fuerza física sobrenatural
+Prueba3
+Error: La funcion [consstruirComponente] con un parametros no esta disponible jjj
+Prueba4
+Error: La funcion [consstruirComponente] con dos parametros no esta disponible
+Prueba5
+Error: La funcion [consstruirComponente] con siete parametros no esta disponible
+Prueba6
+Error: La funcion [consstruirComponente] con un parametros no esta disponible
+Prueba7
+Estoy en guerrero
+Prueba7

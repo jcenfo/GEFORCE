@@ -86,6 +86,12 @@ public class FabricaCalabozos {
 //                sMessage = get_information_Character();
                 break;
             case 5:
+                Resources.MAIN.setScreen(new StoreScreen());
+
+//                Resources.MAIN.setScreen(new TimerScreen());
+//                sMessage = get_information_Character();
+                break;
+            case 6:
                 sMessage = "Thank you for using the software";
                 break;
             default:

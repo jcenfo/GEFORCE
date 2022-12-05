@@ -36,11 +36,11 @@ public class Items implements IComponenteProducto {
         this._Posiones = _Posiones;
     }
 
-    public ArrayList<Armas> get_Armas() {
+    public ArrayList<com.bisoft.game.patterns.Creational.Builder.objetos.Armas> get_Armas() {
         return _Armas;
     }
 
-    public void set_Armas(ArrayList<Armas> _Armas) {
+    public void set_Armas(ArrayList<com.bisoft.game.patterns.Creational.Builder.objetos.Armas> _Armas) {
         this._Armas = _Armas;
     }
 
@@ -57,7 +57,7 @@ public class Items implements IComponenteProducto {
 
     private ArrayList<Cenfomonedas> _Cenfomonedas;
     private ArrayList<Posiones> _Posiones;
-    private ArrayList<Armas> _Armas;
+    private ArrayList<com.bisoft.game.patterns.Creational.Builder.objetos.Armas> _Armas;
     private ArrayList<Llave> _Llaves;
 
     //CENFOMONEDAS
@@ -133,18 +133,18 @@ public class Items implements IComponenteProducto {
 
     //ARMAS
 
-    public void agregarArma(Armas pArma){
+    public void agregarArma(com.bisoft.game.patterns.Creational.Builder.objetos.Armas pArma){
         this.get_Armas().add(pArma);
 
     }
 
     public void nuevaArma(int pId, String pArma){
-        agregarArma(new Armas(pId,0, pArma));
+        agregarArma(new com.bisoft.game.patterns.Creational.Builder.objetos.Armas(pId,0, pArma));
 
     }
 
-    public Armas obtenerArma(int pId){
-        for(Armas obj : this.get_Armas()){
+    public com.bisoft.game.patterns.Creational.Builder.objetos.Armas obtenerArma(int pId){
+        for(com.bisoft.game.patterns.Creational.Builder.objetos.Armas obj : this.get_Armas()){
             if(obj.getId() == pId)
                 return obj;
         }
@@ -153,7 +153,7 @@ public class Items implements IComponenteProducto {
 
     public String infoArmas(){
         String data= "";
-        for(Armas obj : this.get_Armas())
+        for(com.bisoft.game.patterns.Creational.Builder.objetos.Armas obj : this.get_Armas())
             data += obj.mostrarInformacion() + "/n";
 
         return data;
@@ -163,7 +163,7 @@ public class Items implements IComponenteProducto {
     }
 
     public boolean existenArmas(String pNombre){
-        for (Armas obj : this.get_Armas())
+        for (com.bisoft.game.patterns.Creational.Builder.objetos.Armas obj : this.get_Armas())
         {
             if(obj.getDescripcion() == pNombre)
                 return true;
@@ -210,7 +210,7 @@ public class Items implements IComponenteProducto {
     public Items(int pId, String pDescripcion,
                  ArrayList<Cenfomonedas> pCenfomonedas,
                  ArrayList<Posiones> pPosiones,
-                 ArrayList<Armas> pArmas,
+                 ArrayList<com.bisoft.game.patterns.Creational.Builder.objetos.Armas> pArmas,
                  ArrayList<Llave> pLlaves){
         set_Armas(pArmas);
         setId(pId);
@@ -227,7 +227,7 @@ public class Items implements IComponenteProducto {
     public Items(int pId, String pDescripcion){
         setDescripcion(pDescripcion);
         setId(pId);
-        set_Armas(new ArrayList<Armas>());
+        set_Armas(new ArrayList<com.bisoft.game.patterns.Creational.Builder.objetos.Armas>());
         set_Posiones(new ArrayList<Posiones>());
         set_Llaves(new ArrayList<Llave>());
         set_Cenfomonedas(new ArrayList<Cenfomonedas>());

@@ -1,6 +1,5 @@
 package com.bisoft.game.patterns.Creational.Builder.constructores;
 
-import com.bisoft.game.patterns.Creational.Builder.constructores.AComponenteProducto;
 import com.bisoft.game.patterns.Creational.Builder.objetos.*;
 
 
@@ -30,7 +29,7 @@ public class BuilderCenfomonedas  extends AComponenteProducto {
     @Override
     public void construirComponente(int pId, String pNombre, int pNivel, String pDescripcion) throws Exception {
 
-        throw new Exception("La funcion [consstruirComponente] con cuatro parametros no esta disponible");
+        throw new Exception("La funcion [consstruirComponente] con cuatro parametros no esta disponibleb");
 
     }
 

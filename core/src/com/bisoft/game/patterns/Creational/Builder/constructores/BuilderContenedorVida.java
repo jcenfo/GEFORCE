@@ -1,6 +1,5 @@
 package com.bisoft.game.patterns.Creational.Builder.constructores;
 
-import com.bisoft.game.patterns.Creational.Builder.constructores.AComponenteProducto;
 import com.bisoft.game.patterns.Creational.Builder.objetos.*;
 
 
@@ -8,7 +7,7 @@ import java.util.ArrayList;
 
 public class BuilderContenedorVida extends AComponenteProducto {
     public BuilderContenedorVida(){
-        this.setIndice(3);
+        this.setIndice(5);
     }
 
 
@@ -30,7 +29,7 @@ public class BuilderContenedorVida extends AComponenteProducto {
     @Override
     public void construirComponente(int pId, String pNombre, int pNivel, String pDescripcion) throws Exception {
 
-        throw new Exception("La funcion [consstruirComponente] con cuatro parametros no esta disponible");
+        throw new Exception("La funcion [consstruirComponente] con cuatro parametros no esta disponible c");
 
     }
 

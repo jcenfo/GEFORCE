@@ -18,6 +18,7 @@ public class Resources {
     public static final String COMPANY_LOGO = "Images/Geforce.png";
     //imagen pantalla de menu
     public static final String MENU_BACKGROUND = "background/Fondo.png";
+    public static final String TIENDA_BACKGROUND = "background/TiendaFondo.jpg";
 
     public static final String HABITACION_JARDIN = "rooms/FondoJardinEdit.jpg";
 
