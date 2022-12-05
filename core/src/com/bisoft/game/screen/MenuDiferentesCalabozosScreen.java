@@ -134,8 +134,8 @@ public class MenuDiferentesCalabozosScreen implements Screen {
 //        this.options.add(new Text("Guerrero", mFontSize, Resources.GAME_FONT));
 //        this.options.add(new Text("Mercenario", mFontSize, Resources.GAME_FONT));
 //        this.options.add(new Text("Mago", mFontSize, Resources.GAME_FONT));
-        this.options.add(new Text("CALABOZO TENEBROSO", mFontSize, Resources.GAME_FONT));
-        this.options.add(new Text("CALOBOZO CON TRAMPAS", mFontSize, Resources.GAME_FONT));
+        this.options.add(new Text("Calabozo arcade", mFontSize, Resources.GAME_FONT));
+        this.options.add(new Text("Calabozo alcantarilla", mFontSize, Resources.GAME_FONT));
         this.options.add(new Text("Salir", mFontSize, Resources.GAME_FONT));
 
 
